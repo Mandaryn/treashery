@@ -15,3 +15,6 @@ gem 'unicorn'
 # Deploy with Capistrano
 # gem 'capistrano'
 gem 'ruby-debug19', :require => 'ruby-debug'
+
+gem 'rspec-rails', :group => [:development, :test]
+gem "factory_girl", "~> 2.0.0.beta2"
