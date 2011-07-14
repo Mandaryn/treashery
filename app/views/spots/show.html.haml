@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @spot.name
+%p
+  %b Lng:
+  = @spot.lng
+%p
+  %b Lat:
+  = @spot.lat
+%p
+  %b Description:
+  = @spot.description
+%p
+  %b Address:
+  = @spot.address
+
+= link_to 'Edit', edit_spot_path(@spot)
+\|
+= link_to 'Back', spots_path
