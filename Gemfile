@@ -6,15 +6,15 @@ gem 'haml-rails'
 gem 'coffee-script'
 gem 'uglifier'
 
-gem "bson_ext", :platform => :ruby
+gem "bson_ext", :platforms => :ruby
 gem "mongoid", ">= 2.0.0.beta.19"
 
 gem 'jquery-rails'
-gem 'unicorn'
+gem 'unicorn', :platforms => :ruby
 
 # Deploy with Capistrano
 # gem 'capistrano'
-gem 'ruby-debug19', :require => 'ruby-debug'
+gem 'ruby-debug19', :require => 'ruby-debug', :platforms => [:ruby]
 
 gem 'rspec-rails', :group => [:development, :test]
 gem "factory_girl", "~> 2.0.0.beta2"
