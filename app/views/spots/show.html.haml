@@ -18,4 +18,6 @@
 
 = link_to 'Edit', edit_spot_path(@spot)
 \|
-= link_to 'Back', spots_path
+= link_to 'Destroy', @spot, :confirm => 'Are you sure?', :method => :delete
+\|
+= link_to 'Back', root_url

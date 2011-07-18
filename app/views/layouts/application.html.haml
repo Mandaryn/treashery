@@ -1,0 +1,14 @@
+%html
+	%head
+		%title Treashery
+		= stylesheet_link_tag "application"
+		= javascript_include_tag "application"
+		= csrf_meta_tags
+	%body
+		#header
+			%h1 Welcome to Treashery - list of trash that lay on our streets
+
+		= yield
+		
+		#footer
+			%p trashery.com 2011

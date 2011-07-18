@@ -1,5 +1,8 @@
 Treashery::Application.routes.draw do
+  get "home/index"
+
   resources :spots
+  root :to => 'spots#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

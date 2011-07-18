@@ -4,8 +4,13 @@
     <dict>
         <key>fileTriggers</key>
         <dict>
+<<<<<<< Updated upstream
             <key>rout</key>
             <string>config\routes.rb</string>
+=======
+            <key>env</key>
+            <string>config\environment.rb</string>
+>>>>>>> Stashed changes
         </dict>
     </dict>
 </plist>

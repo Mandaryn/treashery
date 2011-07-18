@@ -3,8 +3,13 @@
 #map_content
 	#google_map
 #spotlist
-	%h3 Spot list:
-	- @spots.each do |spot|
-		.each_spot= link_to spot.name, spot
+	%table
+		%tr
+			%th Spot list:
+		- @spots.each do |spot|
+			%tr
+				%td= link_to spot.name, spot
 #add_new_spot
-	%p= link_to 'New Spot', new_spot_path
+	%table
+		%tr
+			%td= link_to 'New Spot', new_spot_path
