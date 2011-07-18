@@ -16,5 +16,11 @@ gem 'unicorn', :platforms => :ruby
 # gem 'capistrano'
 gem 'ruby-debug19', :require => 'ruby-debug', :platforms => [:ruby]
 
-gem 'rspec-rails', :group => [:development, :test]
+# gem 'rspec-rails', :group => [:development, :test]
+group :development, :test do
+	gem 'rspec-rails'
+	gem 'capybara'
+	gem 'launchy'
+end
+
 gem "factory_girl", "~> 2.0.0.beta2"
