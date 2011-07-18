@@ -4,10 +4,10 @@ describe "spots/new.html.haml" do
   before(:each) do
     assign(:spot, stub_model(Spot,
       :name => "MyString",
-      :lng => "",
-      :lat => "",
+      :lng => "10.0",
+      :lat => "12.0",
       :description => "MyText",
-      :address => "MyText"
+      :address => "MyText2"
     ).as_new_record)
   end
 
