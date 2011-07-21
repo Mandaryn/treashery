@@ -3,7 +3,7 @@ require 'spec_helper'
 describe "Spots" do	
   describe "GET /spots" do
   	before do
-  		Spot.create!(:name => "Spot test")
+  		Spot.create!(:name => "Spot test", :lng => 20.0, :lat => 51.0)
   	end
   	
     it "displays spots" do

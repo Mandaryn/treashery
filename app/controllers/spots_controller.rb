@@ -2,11 +2,12 @@ class SpotsController < ApplicationController
   # GET /spots
   # GET /spots.json
   def index
-    @spots = Spot.all
+    @spots = Spot.bounded(params[:swLng], params[:swLat], params[:neLng], params[:neLat]).all
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html # index.html.haml
       format.json { render json: @spots }
+      format.js
     end
   end
 

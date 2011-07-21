@@ -24,7 +24,11 @@ describe SpotsController do
   # Spot. As you add validations to Spot, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    {}
+    {
+    	:name => "Spot!",
+    	:lat => 51.0,
+    	:lng => 22.0    
+  	}
   end
 
   describe "GET index" do

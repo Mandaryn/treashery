@@ -3,6 +3,7 @@ development:
   database: treashery_development
 
 test:
+  autocreate_indexes: true
   host: localhost
   database: treashery_test
 

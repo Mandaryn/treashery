@@ -3,7 +3,7 @@ require 'spec_helper'
 describe "Spots" do
   describe "EDIT /spots" do
   	before do
-  		@spot = Spot.create!(:name => "Spot test")
+  		@spot = Spot.create!(:name => "Spot test", :lng => 20.0, :lat => 51.0)
   	end
 
     it "edits spot" do
