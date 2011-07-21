@@ -17,12 +17,6 @@ describe "Root page" do
 		
 		page.execute_script('map.setCenter(new google.maps.LatLng(0.0, 0.0))')
 		
-		sleep 5
-		
-    dialog = page.driver.browser.switch_to.alert
-    dialog.text.should == "Dodalo sie i podziabalo"
-    dialog.dismiss
-    
     sleep 5
 		
 		page.should have_no_content('insideSpot1')

@@ -44,9 +44,7 @@ function addMarker(lat, lng, name) {
 };
 
 function reloadMarkers() {
-  $.get('/spots', splitBounds(), function() {
-  	alert('Dodalo sie i podziabalo');
-  }, 'script');
+  $.get('/spots', splitBounds(), function() {}, 'script');
 };
 
 function splitBounds() {
