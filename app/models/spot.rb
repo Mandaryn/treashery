@@ -14,13 +14,13 @@ class Spot
   
   before_save :generate_location
 
-	scope :bounded, ->(swLng, swLat, neLng, neLat) {
+  scope :bounded, ->(swLng, swLat, neLng, neLat) {
     if swLng.present? && swLat.present? && neLng.present? && neLat.present?
-  		where(:location.within => {"$box" => [[swLng.to_f, swLat.to_f], [neLng.to_f, neLat.to_f]]})
-  	else
-  		all
-  	end
-	}
+      where(:location.within => {"$box" => [[swLng.to_f, swLat.to_f], [neLng.to_f, neLat.to_f]]})
+    else
+      all
+    end
+  }
 
   protected
   def generate_location

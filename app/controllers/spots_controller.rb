@@ -1,6 +1,4 @@
 class SpotsController < ApplicationController
-  # GET /spots
-  # GET /spots.json
   def index
     @spots = Spot.bounded(params[:swLng], params[:swLat], params[:neLng], params[:neLat]).all
 
@@ -11,8 +9,6 @@ class SpotsController < ApplicationController
     end
   end
 
-  # GET /spots/1
-  # GET /spots/1.json
   def show
     @spot = Spot.find(params[:id])
 
@@ -22,8 +18,6 @@ class SpotsController < ApplicationController
     end
   end
 
-  # GET /spots/new
-  # GET /spots/new.json
   def new
     @spot = Spot.new
 
@@ -33,13 +27,10 @@ class SpotsController < ApplicationController
     end
   end
 
-  # GET /spots/1/edit
   def edit
     @spot = Spot.find(params[:id])
   end
 
-  # POST /spots
-  # POST /spots.json
   def create
     @spot = Spot.new(params[:spot])
 
@@ -54,8 +45,6 @@ class SpotsController < ApplicationController
     end
   end
 
-  # PUT /spots/1
-  # PUT /spots/1.json
   def update
     @spot = Spot.find(params[:id])
 
@@ -70,8 +59,6 @@ class SpotsController < ApplicationController
     end
   end
 
-  # DELETE /spots/1
-  # DELETE /spots/1.json
   def destroy
     @spot = Spot.find(params[:id])
     @spot.destroy

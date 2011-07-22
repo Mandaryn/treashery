@@ -1,10 +1,10 @@
 = javascript_include_tag "http://maps.google.com/maps/api/js?v=3.4&?libraries=geometry&sensor=false"
 = javascript_include_tag "google_map.js"
 #map_content
-	#google_map
+  #google_map
 #sidebar
-	%h3 Spot list:
-	#spotlist
-		= render @spots
+  %h3 Spot list:
+  #spotlist
+    = render @spots
 #add_new_spot
-	%p= link_to 'New Spot', new_spot_path
+  %p= link_to 'New Spot', new_spot_path

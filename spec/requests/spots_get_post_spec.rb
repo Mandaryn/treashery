@@ -1,11 +1,11 @@
 require 'spec_helper'
 
-describe "Spots" do	
+describe "Spots" do 
   describe "GET /spots" do
-  	before do
-  		Spot.create!(:name => "Spot test", :lng => 20.0, :lat => 51.0)
-  	end
-  	
+    before do
+      Spot.create!(:name => "Spot test", :lng => 20.0, :lat => 51.0)
+    end
+    
     it "displays spots" do
       visit spots_path
       page.should have_content("Spot test")
@@ -14,9 +14,9 @@ describe "Spots" do
   
   describe "POST /spots" do
     it "create spots" do
-    	visit new_spot_path
-    	fill_in "Description", :with => "Spot test 2"
-    	click_button "Save"
+      visit new_spot_path
+      fill_in "Description", :with => "Spot test 2"
+      click_button "Save"
       page.should have_content("Spot test 2")
     end
   end 

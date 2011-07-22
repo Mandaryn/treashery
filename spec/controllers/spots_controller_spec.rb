@@ -25,10 +25,10 @@ describe SpotsController do
   # update the return value of this method accordingly.
   def valid_attributes
     {
-    	:name => "Spot!",
-    	:lat => 51.0,
-    	:lng => 22.0    
-  	}
+      :name => "Spot!",
+      :lat => 51.0,
+      :lng => 22.0    
+    }
   end
 
   describe "GET index" do
