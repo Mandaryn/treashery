@@ -15,15 +15,17 @@ class SpotsController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @spot }
+      format.js
     end
   end
 
   def new
-    @spot = Spot.new
+    @spot = Spot.new(:lat => params[:lat], :lng => params[:lng])
 
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @spot }
+      format.js
     end
   end
 
@@ -38,9 +40,11 @@ class SpotsController < ApplicationController
       if @spot.save
         format.html { redirect_to @spot, notice: 'Spot was successfully created.' }
         format.json { render json: @spot, status: :created, location: @spot }
+        format.js
       else
         format.html { render action: "new" }
         format.json { render json: @spot.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end
@@ -52,9 +56,11 @@ class SpotsController < ApplicationController
       if @spot.update_attributes(params[:spot])
         format.html { redirect_to @spot, notice: 'Spot was successfully updated.' }
         format.json { head :ok }
+        format.js
       else
         format.html { render action: "edit" }
         format.json { render json: @spot.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end
@@ -66,6 +72,7 @@ class SpotsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to spots_url }
       format.json { head :ok }
+      format.js
     end
   end
 end

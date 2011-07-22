@@ -16,10 +16,12 @@
     = f.label :lng
     = f.text_field :lng
   .field
+    = f.label :address
+    = f.text_field :address
+  .get_address
+    = link_to "Get location's address", '#', class: 'get_address'
+  .field
     = f.label :description
     = f.text_area :description
-  .field
-    = f.label :address
-    = f.text_area :address
   .actions
-    = f.submit 'Save'
+    %br= f.submit 'Save'
