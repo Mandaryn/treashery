@@ -1,0 +1,32 @@
+%h1 Listing localities
+
+%table
+  %tr
+    %th Name
+    %th Type
+    %th Nelat
+    %th Nelng
+    %th Swlat
+    %th Swlng
+    %th
+    %th
+    %th
+
+  - @localities.each do |locality|
+    %tr
+      %td= locality.name
+      %td
+        %ul
+          - locality.type.each do |type|
+            %li= type
+      %td= locality.neLat
+      %td= locality.neLng
+      %td= locality.swLat
+      %td= locality.swLng
+      %td= link_to 'Show', locality
+      %td= link_to 'Edit', edit_locality_path(locality)
+      %td= link_to 'Destroy', locality, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Locality', new_locality_path

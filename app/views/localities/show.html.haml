@@ -1,0 +1,28 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @locality.name
+%p
+  %b Type:
+  %ul
+  - @locality.type.each do |type|
+    %li= type
+%p
+  %b Nelat:
+  = @locality.neLat
+%p
+  %b Nelng:
+  = @locality.neLng
+%p
+  %b Swlat:
+  = @locality.swLat
+%p
+  %b Swlng:
+  = @locality.swLng
+
+= link_to 'Edit', edit_locality_path(@locality)
+\|
+= link_to 'Back', localities_path
+\|
+= link_to 'Destroy', @locality, :confirm => 'Are you sure?', :method => :delete

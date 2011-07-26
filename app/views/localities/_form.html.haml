@@ -1,0 +1,31 @@
+= form_for @locality do |f|
+  - if @locality.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@locality.errors.count, "error")} prohibited this locality from being saved:"
+      %ul
+        - @locality.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :type
+    - Locality::TYPES.each do |type|
+      .checkbox
+        = label_tag type, type
+        = check_box_tag 'locality[type][]', type, @locality.type.include?(type), {:id => type}
+  .field
+    = f.label :neLat
+    = f.text_field :neLat
+  .field
+    = f.label :neLng
+    = f.text_field :neLng
+  .field
+    = f.label :swLat
+    = f.text_field :swLat
+  .field
+    = f.label :swLng
+    = f.text_field :swLng
+  .actions
+    = f.submit 'Save'
