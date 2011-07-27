@@ -9,7 +9,7 @@ describe "Spots" do
     it "edits spot" do
       visit edit_spot_path(@spot)
       fill_in "Name", :with => "Spot test 2"
-      click_button "Save"
+      click_button "Update Spot"
       page.should have_content("Spot test 2")
     end
   end

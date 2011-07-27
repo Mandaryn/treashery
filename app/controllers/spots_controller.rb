@@ -35,7 +35,6 @@ class SpotsController < ApplicationController
 
   def create
     @spot = Spot.new(params[:spot])
-
     respond_to do |format|
       if @spot.save
         format.html { redirect_to @spot, notice: 'Spot was successfully created.' }

@@ -20,6 +20,12 @@
 %p
   %b Swlng:
   = @locality.swLng
+%p
+  %b Spots:
+  %ul
+  - @spots = @locality.spots
+  - @spots.each do |spot|
+    %li= spot.name
 
 = link_to 'Edit', edit_locality_path(@locality)
 \|

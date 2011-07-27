@@ -21,7 +21,7 @@ describe "Localities" do
     it "edits locality" do
       visit edit_locality_path(@locality)
       fill_in "Name", :with => "locality test 2"
-      click_button "Save"
+      click_button "Update Locality"
       page.should have_content("locality test 2")
     end
   end

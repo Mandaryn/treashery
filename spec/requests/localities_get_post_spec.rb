@@ -34,7 +34,7 @@ describe "Locality" do
       fill_in "Nelng", :with => 23.0
       fill_in "Swlat", :with => 24.0
       fill_in "Swlng", :with => 25.0
-      click_button "Save"
+      click_button "Create Locality"
       page.should have_content("30.0")
       page.should have_content("route")
     end

@@ -1,27 +1,16 @@
-= form_for @spot do |f|
+= simple_form_for @spot do |f|
   -if @spot.errors.any?
     #error_explanation
       %h2= "#{pluralize(@spot.errors.count, "error")} prohibited this spot from being saved:"
       %ul
         - @spot.errors.full_messages.each do |msg|
           %li= msg
-
-  .field
-    = f.label :name
-    = f.text_field :name
-  .field
-    = f.label :lat
-    = f.text_field :lat
-  .field
-    = f.label :lng
-    = f.text_field :lng
-  .field
-    = f.label :address
-    = f.text_field :address
+  = f.input :name
+  = f.input :lat
+  = f.input :lng
+  = f.input :address
   .get_address
     = link_to "Get location's address", '#', class: 'get_address'
-  .field
-    = f.label :description
-    = f.text_area :description
-  .actions
-    %br= f.submit 'Save'
+  = f.input :locality_id, collection: Locality.all
+  = f.input :description, as: :text
+  = f.button :submit

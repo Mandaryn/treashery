@@ -7,6 +7,16 @@ class Locality
   field :swLat, type: Float
   field :swLng, type: Float
   
+  validates_presence_of :name, :type, :neLat, :neLng, :swLat, :swLng
+  validates_numericality_of :neLat, :swLat, :greater_than_or_equal_to => -90, :less_than_or_equal_to => 90
+  validates_numericality_of :neLng, :swLng, :greater_than_or_equal_to => -180, :less_than_or_equal_to => 180
+  
+  has_many :localities
+  has_many :spots
+  belongs_to :locality
+  
+  accepts_nested_attributes_for :localities
+
   TYPES = ['street_address',
     'route',
     'intersection',
@@ -30,8 +40,4 @@ class Locality
     'street_number',
     'floor',
     'room']
-    
-  validates_presence_of :name, :type, :neLat, :neLng, :swLat, :swLng
-  validates_numericality_of :neLat, :swLat, :greater_than_or_equal_to => -90, :less_than_or_equal_to => 90
-  validates_numericality_of :neLng, :swLng, :greater_than_or_equal_to => -180, :less_than_or_equal_to => 180
 end
