@@ -6,5 +6,7 @@
   %h3 Spot list:
   #spotlist
     = render @spots
+  #paginator
+    = paginate @spots, :remote => true, :theme => 'google_style'
 #add_new_spot
   %p= link_to 'New Spot', new_spot_path

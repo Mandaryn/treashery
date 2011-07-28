@@ -17,6 +17,7 @@ function showMap() {
   };
   map = new google.maps.Map(document.getElementById("google_map"),myOptions);   
   addSpot();
+  addSmallMarkers();
   google.maps.event.addListener(map, 'tilesloaded', function() {
     if(!idleEventSet) {
       idleEventSet = true
@@ -39,7 +40,8 @@ function addMarker(lat, lng, name) {
   var markerOptions = {
     position: spot,
     map: map,
-    title: name
+    title: name,
+    zIndex: 1
   };
   var marker = new google.maps.Marker(markerOptions);
   markersArray.push(marker);
@@ -70,7 +72,7 @@ function deleteMarkers() {
 };
 
 function addSpot() {
-  google.maps.event.addListener(map, 'click', function(event) {;
+  google.maps.event.addListener(map, 'rightclick', function(event) {;
     var link = '<a href="/spots/new?lat='+event.latLng.lat()+'&lng='+event.latLng.lng()+'">Add spot at this location</a>';
     var infoWindow = new google.maps.InfoWindow({
       content: link,
@@ -78,4 +80,27 @@ function addSpot() {
     });    
     infoWindow.open(map);    
   });      
+};
+
+function addSmallMarkers() {
+  $.getJSON('/spots.json', function(spot) {
+    $.each(spot, function(index, element) {
+      var lat = parseFloat(element.lat);
+      var lng = parseFloat(element.lng);
+      var name = element.name;
+      addSmallMarker(lat, lng, name);
+    }); 
+  });
+};
+
+function addSmallMarker(lat, lng, name) {
+  var spot = new google.maps.LatLng(lat,lng);
+  var markerOptions = {
+    position: spot,
+    map: map,
+    title: name,
+    icon: '/images/kropka.png',
+    zIndex: 0
+  };
+  var marker = new google.maps.Marker(markerOptions);
 };

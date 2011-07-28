@@ -1,3 +1,4 @@
 $("#spotlist").html("<%= escape_javascript(render @spots) %>");
+$("#paginator").html("<%= escape_javascript(paginate(@spots, :remote => true, :theme => 'google_style').to_s) %>");
 deleteMarkers();
 addAllMarkers();

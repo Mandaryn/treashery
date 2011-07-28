@@ -6,6 +6,7 @@ gem 'haml-rails'
 gem 'coffee-script'
 gem 'uglifier'
 gem 'simple_form'
+gem 'kaminari'
 
 gem "bson_ext", :platforms => :ruby
 gem "mongoid", ">= 2.0.0.beta.19"

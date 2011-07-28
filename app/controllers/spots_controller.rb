@@ -1,11 +1,11 @@
 class SpotsController < ApplicationController
   def index
-    @spots = Spot.bounded(params[:swLng], params[:swLat], params[:neLng], params[:neLat]).all
+    @spots = Spot.bounded(params[:swLng], params[:swLat], params[:neLng], params[:neLat])
 
     respond_to do |format|
-      format.html # index.html.haml
+      format.html { @spots = @spots.page(params[:page])}
       format.json { render json: @spots }
-      format.js
+      format.js { @spots = @spots.page(params[:page])}
     end
   end
 
