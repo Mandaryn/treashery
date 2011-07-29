@@ -16,3 +16,4 @@ doc/*.dot
 coverage/*
 *.tmproj
 *.sw?
+nul
