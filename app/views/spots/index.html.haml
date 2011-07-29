@@ -7,6 +7,6 @@
   #spotlist
     = render @spots
   #paginator
-    = paginate @spots, :remote => true, :theme => 'google_style'
+    = paginate @spots, :remote => true
 #add_new_spot
   %p= link_to 'New Spot', new_spot_path
