@@ -5,7 +5,7 @@ describe "Locality" do
   def valid_attributes
   {
     :name => "Locality test",
-    :types => ['route', 'political'], 
+    :types => ['country'], 
     :neLat => 22.0,
     :neLng => 23.0,
     :swLat => 24.0,
@@ -28,15 +28,14 @@ describe "Locality" do
     it "create localities" do
       visit new_locality_path
       fill_in "Name", :with => "Locality test"
-      page.check('route')
-      page.check('political')
+      page.check('country')
       fill_in "Nelat", :with => 30.0
       fill_in "Nelng", :with => 23.0
       fill_in "Swlat", :with => 24.0
       fill_in "Swlng", :with => 25.0
       click_button "Create Locality"
       page.should have_content("30.0")
-      page.should have_content("route")
+      page.should have_content("country")
     end
   end 
 end

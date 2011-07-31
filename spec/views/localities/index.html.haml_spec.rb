@@ -5,7 +5,7 @@ describe "localities/index.html.haml" do
     assign(:localities, [
       stub_model(Locality,
         :name => "Name",
-        :types => ['route', 'political'],
+        :types => ['country'],
         :neLat => 1.5,
         :neLng => 1.6,
         :swLat => 1.7,
@@ -13,7 +13,7 @@ describe "localities/index.html.haml" do
       ),
       stub_model(Locality,
         :name => "Name",
-        :types => ['route', 'political'],
+        :types => ['country'],
         :neLat => 1.5,
         :neLng => 1.6,
         :swLat => 1.7,
@@ -27,8 +27,7 @@ describe "localities/index.html.haml" do
     # Run the generator again with the --webrat flag if you want to use webrat matchers
     assert_select "tr>td", :text => "Name".to_s, :count => 2
     # Run the generator again with the --webrat flag if you want to use webrat matchers
-    assert_select "ul>li", :text => "route".to_s, :count => 2
-    assert_select "ul>li", :text => "political".to_s, :count => 2
+    assert_select "ul>li", :text => "country".to_s, :count => 2
     # Run the generator again with the --webrat flag if you want to use webrat matchers
     assert_select "tr>td", :text => 1.5.to_s, :count => 2
     # Run the generator again with the --webrat flag if you want to use webrat matchers

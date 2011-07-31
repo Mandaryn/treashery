@@ -17,5 +17,5 @@ class Locality
 
   accepts_nested_attributes_for :localities
 
-  TYPES = %w(route intersection political country administrative_area_level_1 administrative_area_level_2 administrative_area_level_3 colloquial_area locality sublocality neighborhood postal_code natural_feature airport park point_of_interest)
+  TYPES = %w(country administrative_area_level_1 administrative_area_level_2 administrative_area_level_3 locality sublocality neighborhood natural_feature airport park point_of_interest)
 end
