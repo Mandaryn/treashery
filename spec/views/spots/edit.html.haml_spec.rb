@@ -2,13 +2,7 @@ require 'spec_helper'
 
 describe "spots/edit.html.haml" do
   before(:each) do
-    @spot = assign(:spot, stub_model(Spot,
-      :name => "MyString",
-      :lng => "10.0",
-      :lat => "12.0",
-      :description => "MyText",
-      :address => "MyText2"
-    ))
+    @spot = assign(:spot, Factory.stub(:spot))
   end
 
   it "renders the edit spot form" do

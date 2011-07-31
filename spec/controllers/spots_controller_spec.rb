@@ -1,18 +1,9 @@
 require 'spec_helper'
 
 describe SpotsController do
-
-  def valid_attributes
-    {
-      :name => "Spot!",
-      :lat => 51.0,
-      :lng => 22.0
-    }
-  end
-
   describe "GET index" do
     it "assigns all spots as @spots" do
-      spot = Spot.create! valid_attributes
+      spot = Factory(:spot)
       get :index
       assigns(:spots).to_a.should eq([spot])
     end
@@ -20,7 +11,7 @@ describe SpotsController do
 
   describe "GET show" do
     it "assigns the requested spot as @spot" do
-      spot = Spot.create! valid_attributes
+      spot = Factory(:spot)
       get :show, :id => spot.id.to_s
       assigns(:spot).should eq(spot)
     end
@@ -35,7 +26,7 @@ describe SpotsController do
 
   describe "GET edit" do
     it "assigns the requested spot as @spot" do
-      spot = Spot.create! valid_attributes
+      spot = Factory(:spot)
       get :edit, :id => spot.id.to_s
       assigns(:spot).should eq(spot)
     end
@@ -45,18 +36,18 @@ describe SpotsController do
     describe "with valid params" do
       it "creates a new Spot" do
         expect {
-          post :create, :spot => valid_attributes
+          post :create, :spot => Factory.attributes_for(:spot)
         }.to change(Spot, :count).by(1)
       end
 
       it "assigns a newly created spot as @spot" do
-        post :create, :spot => valid_attributes
+        post :create, :spot => Factory.attributes_for(:spot)
         assigns(:spot).should be_a(Spot)
         assigns(:spot).should be_persisted
       end
 
       it "redirects to the created spot" do
-        post :create, :spot => valid_attributes
+        post :create, :spot => Factory.attributes_for(:spot)
         response.should redirect_to(Spot.last)
       end
     end
@@ -79,34 +70,34 @@ describe SpotsController do
   describe "PUT update" do
     describe "with valid params" do
       it "updates the requested spot" do
-        spot = Spot.create! valid_attributes
+        spot = Factory(:spot)
         Spot.any_instance.should_receive(:update_attributes).with({'these' => 'params'})
         put :update, :id => spot.id, :spot => {'these' => 'params'}
       end
 
       it "assigns the requested spot as @spot" do
-        spot = Spot.create! valid_attributes
-        put :update, :id => spot.id, :spot => valid_attributes
+        spot = Factory(:spot)
+        put :update, :id => spot.id, :spot => Factory.attributes_for(:spot)
         assigns(:spot).should eq(spot)
       end
 
       it "redirects to the spot" do
-        spot = Spot.create! valid_attributes
-        put :update, :id => spot.id, :spot => valid_attributes
+        spot = Factory(:spot)
+        put :update, :id => spot.id, :spot => Factory.attributes_for(:spot)
         response.should redirect_to(spot)
       end
     end
 
     describe "with invalid params" do
       it "assigns the spot as @spot" do
-        spot = Spot.create! valid_attributes
+        spot = Factory(:spot)
         Spot.any_instance.stub(:save).and_return(false)
         put :update, :id => spot.id.to_s, :spot => {}
         assigns(:spot).should eq(spot)
       end
 
       it "re-renders the 'edit' template" do
-        spot = Spot.create! valid_attributes
+        spot = Factory(:spot)
         Spot.any_instance.stub(:save).and_return(false)
         put :update, :id => spot.id.to_s, :spot => {}
         response.should render_template("edit")
@@ -116,14 +107,14 @@ describe SpotsController do
 
   describe "DELETE destroy" do
     it "destroys the requested spot" do
-      spot = Spot.create! valid_attributes
+      spot = Factory(:spot)
       expect {
         delete :destroy, :id => spot.id.to_s
       }.to change(Spot, :count).by(-1)
     end
 
     it "redirects to the spots list" do
-      spot = Spot.create! valid_attributes
+      spot = Factory(:spot)
       delete :destroy, :id => spot.id.to_s
       response.should redirect_to(spots_url)
     end

@@ -1,27 +1,14 @@
+#encoding: utf-8
 require 'spec_helper'
 
 describe "spots/index.html.haml" do
   before(:each) do
-    assign(:spots, [
-      stub_model(Spot,
-        :name => "Name",
-        :lng => "10.0",
-        :lat => "12.0",
-        :description => "MyText",
-        :address => "MyText2"
-      ),
-      stub_model(Spot,
-        :name => "Name",
-        :lng => "10.0",
-        :lat => "12.0",
-        :description => "MyText",
-        :address => "MyText2"
-      )
-    ])
+    assign(:spots, [Factory.stub(:spot, name: 'Śmieci'), Factory.stub(:spot, name: 'Wrak')])
   end
 
   it "renders a list of spots" do
     render
-    rendered.should match(/Name/), :count => 2
+    rendered.should match(/Śmieci/)
+    rendered.should match(/Wrak/)
   end
 end

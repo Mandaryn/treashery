@@ -20,11 +20,10 @@ gem 'ruby-debug19', :require => 'ruby-debug', :platforms => [:ruby]
 
 group :development, :test do
   gem 'rspec-rails'
+  gem 'factory_girl_rails'
 end
 
 group :test do
   gem 'capybara'
   gem 'launchy'
 end
-
-gem "factory_girl", "~> 2.0.0.beta2"

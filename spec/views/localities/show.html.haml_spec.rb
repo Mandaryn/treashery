@@ -1,24 +1,18 @@
+#encoding: utf-8
 require 'spec_helper'
 
 describe "localities/show.html.haml" do
   before(:each) do
-    @locality = assign(:locality, stub_model(Locality,
-      :name => "Name",
-      :types => ['country'],
-      :neLat => 1.5,
-      :neLng => 1.5,
-      :swLat => 1.5,
-      :swLng => 1.5
-    ))
+    @locality = assign(:locality, Factory.stub(:locality, neLat: 20, neLng:20.1, swLat: 10, swLng:10.1, name: 'Łódź', types: ['sublocality']))
   end
 
-  it "renders attributes in <p>" do
+  it "renders attributes" do
     render
-    rendered.should match(/Name/)
-    rendered.should match(/country/)
-    rendered.should match(/1.5/)
-    rendered.should match(/1.5/)
-    rendered.should match(/1.5/)
-    rendered.should match(/1.5/)
+    rendered.should match(/Łódź/)
+    rendered.should match(/sublocality/)
+    rendered.should match(/20.0/)
+    rendered.should match(/20.1/)
+    rendered.should match(/10.0/)
+    rendered.should match(/10.1/)
   end
 end

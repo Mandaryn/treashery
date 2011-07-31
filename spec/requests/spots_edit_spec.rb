@@ -1,16 +1,17 @@
+#encoding: utf-8
 require 'spec_helper'
 
 describe "Spots" do
   describe "EDIT /spots" do
     before do
-      @spot = Spot.create!(:name => "Spot test", :lng => 20.0, :lat => 51.0)
+      @spot = Factory(:spot)
     end
 
     it "edits spot" do
       visit edit_spot_path(@spot)
-      fill_in "Name", :with => "Spot test 2"
+      fill_in "Name", :with => "Wielka góra"
       click_button "Update Spot"
-      page.should have_content("Spot test 2")
+      page.should have_content("Wielka góra")
     end
   end
 end

@@ -2,13 +2,7 @@ require 'spec_helper'
 
 describe "spots/new.html.haml" do
   before(:each) do
-    assign(:spot, stub_model(Spot,
-      :name => "MyString",
-      :lng => "10.0",
-      :lat => "12.0",
-      :description => "MyText",
-      :address => "MyText2"
-    ).as_new_record)
+    assign(:spot, Factory.build(:spot))
   end
 
   it "renders new spot form" do

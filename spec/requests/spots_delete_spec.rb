@@ -3,7 +3,7 @@ require 'spec_helper'
 describe "Spots" do
   describe "DELETE /spots" do
     before do
-      @spot = Spot.create!(:name => "Spot test 2", :lng => 20.0, :lat => 51.0)
+      @spot = Factory(:spot)
     end
 
     it "deletes spot" do
