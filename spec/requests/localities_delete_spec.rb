@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 describe "Localities" do
-
   describe "DELETE /localities" do
     before do
       @locality = Factory(:locality)

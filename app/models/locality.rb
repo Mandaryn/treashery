@@ -1,6 +1,9 @@
 class Locality
+  TYPES = %w(country administrative_area_level_1 administrative_area_level_2 administrative_area_level_3 locality sublocality neighborhood natural_feature airport park point_of_interest)
+
   include Mongoid::Document
   field :name, type: String
+  field :formatted_address, type: String
   field :types, type: Array, default: []
   field :neLat, type: Float
   field :neLng, type: Float
@@ -15,7 +18,10 @@ class Locality
   has_many :spots
   belongs_to :locality
 
-  accepts_nested_attributes_for :localities
-
-  TYPES = %w(country administrative_area_level_1 administrative_area_level_2 administrative_area_level_3 locality sublocality neighborhood natural_feature airport park point_of_interest)
+  def geometry=(value) #set bounds from geocoding results property
+    self.neLat = value["viewport"]["northeast"]["lat"]
+    self.neLng = value["viewport"]["northeast"]["lng"]
+    self.swLat = value["viewport"]["southwest"]["lat"]
+    self.swLng = value["viewport"]["southwest"]["lng"]
+  end
 end

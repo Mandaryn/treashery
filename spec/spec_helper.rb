@@ -4,16 +4,31 @@ require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'capybara/rspec'
 require 'capybara/rails'
+require 'vcr'
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
 Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 
+VCR.config do |c|
+  c.cassette_library_dir = 'spec/vcr_cassettes'
+  c.stub_with :fakeweb
+  c.ignore_localhost = true
+end
+
 RSpec.configure do |config|
-  config.before(:each) do
+  config.extend VCR::RSpec::Macros
+  config.before do
     Mongoid.master.collections.select {|c| c.name !~ /system/ }.each(&:drop)
   end
-  # == Mock Framework
+
+  config.before do
+    VCR.insert_cassette('spots/default', record: :new_episodes)
+  end
+
+  config.after do
+    VCR.eject_cassette
+  end  # == Mock Framework
   #
   # If you prefer to use mocha, flexmock or RR, uncomment the appropriate line:
   #

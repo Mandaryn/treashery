@@ -1,13 +1,26 @@
 class Spot
   include Mongoid::Document
+  include Geocoder::Model::Mongoid
   field :name, type: String
   field :lng, type: Float
   field :lat, type: Float
   field :location, type: Array
   index [[ :location, Mongo::GEO2D ]], min: -180, max: 180
+  field :description, type: String
+  field :address, type: String
+  field :tags, type: Array, default: []
 
-  field :description, :type => String
-  field :address, :type => String
+  reverse_geocoded_by :location do |spot,results|
+    spot.tags = GeocodingService.location_tags(results)
+    spot.address = GeocodingService.address(results)
+    GeocodingService.create_locations(results)
+  end
+  before_save :generate_location
+  before_save :reverse_geocode
+
+  validates :name, :lat, :lng, presence: true
+  validates :lat, numericality: { greater_than_or_equal_to: -90, less_than_or_equal_to: 90 }
+  validates :lng, numericality: { greater_than_or_equal_to: -180, less_than_or_equal_to: 180 }
 
   paginates_per 10
 
@@ -16,8 +29,6 @@ class Spot
   validates_numericality_of :lng, :greater_than_or_equal_to => -180, :less_than_or_equal_to => 180
 
   belongs_to :locality
-
-  before_save :generate_location
 
   scope :bounded, ->(swLng, swLat, neLng, neLat) {
     if swLng.present? && swLat.present? && neLng.present? && neLat.present?

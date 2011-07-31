@@ -7,6 +7,7 @@ gem 'coffee-script'
 gem 'uglifier'
 gem 'simple_form'
 gem 'kaminari'
+gem 'geocoder'
 
 gem "bson_ext", :platforms => :ruby
 gem "mongoid", ">= 2.0.0.beta.19"
@@ -26,4 +27,6 @@ end
 group :test do
   gem 'capybara'
   gem 'launchy'
+  gem 'vcr'
+  gem 'fakeweb'
 end

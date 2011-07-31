@@ -7,7 +7,7 @@ describe "Show page" do
     @spotOutside = Spot.create!(:name => "outsideSpot", :lng => 0.0, :lat => 0.0)
 
     @locality1 = Locality.create!(:name => "Name1",
-      :types => ['route', 'political'],
+      :types => ['country'],
       :neLat => 1.5,
       :neLng => 1.6,
       :swLat => 1.7,
@@ -15,7 +15,7 @@ describe "Show page" do
     )
 
     @locality2 = Locality.create!(:name => "Name2",
-      :types => ['route', 'political'],
+      :types => ['country'],
       :neLat => 1.5,
       :neLng => 1.6,
       :swLat => 1.7,
@@ -23,7 +23,7 @@ describe "Show page" do
     )
 
     @locality3 = Locality.create!(:name => "Name3",
-      :types => ['route', 'political'],
+      :types => ['country'],
       :neLat => 1.5,
       :neLng => 1.6,
       :swLat => 1.7,
