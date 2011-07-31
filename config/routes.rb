@@ -10,8 +10,6 @@ Treashery::Application.routes.draw do
 
   resources :localities
 
-  get "home/index"
-
   resources :spots
   root :to => 'spots#index'
 end
