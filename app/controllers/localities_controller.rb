@@ -1,6 +1,4 @@
 class LocalitiesController < ApplicationController
-  # GET /localities
-  # GET /localities.json
   def index
     @localities = Locality.all
 
@@ -10,8 +8,6 @@ class LocalitiesController < ApplicationController
     end
   end
 
-  # GET /localities/1
-  # GET /localities/1.json
   def show
     @locality = Locality.find(params[:id])
 
@@ -21,8 +17,6 @@ class LocalitiesController < ApplicationController
     end
   end
 
-  # GET /localities/new
-  # GET /localities/new.json
   def new
     @locality = Locality.new
 
@@ -32,13 +26,10 @@ class LocalitiesController < ApplicationController
     end
   end
 
-  # GET /localities/1/edit
   def edit
     @locality = Locality.find(params[:id])
   end
 
-  # POST /localities
-  # POST /localities.json
   def create
     @locality = Locality.new(params[:locality])
 
@@ -53,8 +44,6 @@ class LocalitiesController < ApplicationController
     end
   end
 
-  # PUT /localities/1
-  # PUT /localities/1.json
   def update
     @locality = Locality.find(params[:id])
 
@@ -69,8 +58,6 @@ class LocalitiesController < ApplicationController
     end
   end
 
-  # DELETE /localities/1
-  # DELETE /localities/1.json
   def destroy
     @locality = Locality.find(params[:id])
     @locality.destroy

@@ -15,7 +15,6 @@ describe "localities/edit.html.haml" do
   it "renders the edit locality form" do
     render
 
-    # Run the generator again with the --webrat flag if you want to use webrat matchers
     assert_select "form", :action => localities_path(@locality), :method => "post" do
       assert_select "input#locality_name", :name => "locality[name]"
       assert_select "input[type=checkbox][value='country'][checked='checked']", :count => 1

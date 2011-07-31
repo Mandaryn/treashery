@@ -13,15 +13,10 @@ describe "spots/show.html.haml" do
 
   it "renders attributes" do
     render
-    # Run the generator again with the --webrat flag if you want to use webrat matchers
     rendered.should match(/Name/)
-    # Run the generator again with the --webrat flag if you want to use webrat matchers
     rendered.should match(/10.0/)
-    # Run the generator again with the --webrat flag if you want to use webrat matchers
     rendered.should match(/12.0/)
-    # Run the generator again with the --webrat flag if you want to use webrat matchers
     rendered.should match(/MyText2/)
-    # Run the generator again with the --webrat flag if you want to use webrat matchers
     rendered.should match(/MyText/)
   end
 end

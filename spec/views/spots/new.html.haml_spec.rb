@@ -14,7 +14,6 @@ describe "spots/new.html.haml" do
   it "renders new spot form" do
     render
 
-    # Run the generator again with the --webrat flag if you want to use webrat matchers
     assert_select "form", :action => spots_path, :method => "post" do
       assert_select "input#spot_name", :name => "spot[name]"
       assert_select "input#spot_lng", :name => "spot[lng]"

@@ -22,7 +22,6 @@ describe "spots/index.html.haml" do
 
   it "renders a list of spots" do
     render
-    # Run the generator again with the --webrat flag if you want to use webrat matchers
     rendered.should match(/Name/), :count => 2
   end
 end

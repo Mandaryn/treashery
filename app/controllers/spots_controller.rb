@@ -13,7 +13,7 @@ class SpotsController < ApplicationController
     @spot = Spot.find(params[:id])
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html
       format.json { render json: @spot }
       format.js
     end
@@ -23,7 +23,7 @@ class SpotsController < ApplicationController
     @spot = Spot.new(:lat => params[:lat], :lng => params[:lng])
 
     respond_to do |format|
-      format.html # new.html.erb
+      format.html
       format.json { render json: @spot }
       format.js
     end
