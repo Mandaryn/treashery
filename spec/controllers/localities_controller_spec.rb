@@ -26,7 +26,7 @@ describe LocalitiesController do
   def valid_attributes
   {
     :name => "Locality test",
-    :type => ['route', 'political'], 
+    :types => ['route', 'political'], 
     :neLat => 22.0,
     :neLng => 23.0,
     :swLat => 24.0,

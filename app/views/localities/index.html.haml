@@ -5,7 +5,7 @@
 %table
   %tr
     %th Name
-    %th Type
+    %th Types
     %th Nelat
     %th Nelng
     %th Swlat
@@ -19,7 +19,7 @@
       %td= locality.name
       %td
         %ul
-          - locality.type.each do |type|
+          - locality.types.each do |type|
             %li= type
       %td= locality.neLat
       %td= locality.neLng

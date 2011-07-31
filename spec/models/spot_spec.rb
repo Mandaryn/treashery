@@ -6,7 +6,7 @@ describe Spot do
       @spotInside = Spot.create!(:name => "spotInside", :lng => 30.0, :lat => 30.0 )
       @spotOutside = Spot.create!(:name => "spotOutside", :lng => 10.0, :lat => 5.0 )
       @locality = Locality.create!(:name => "Name",
-        :type => ['route', 'political'],
+        :types => ['route', 'political'],
         :neLat => 1.5,
         :neLng => 1.6,
         :swLat => 1.7,
@@ -36,7 +36,7 @@ describe Spot do
       @spotInside = Spot.create!(:name => "spotInside", :lng => 30.0, :lat => 30.0 )
       @spotOutside = Spot.create!(:name => "spotOutside", :lng => 10.0, :lat => 5.0 )
       @locality = Locality.create!(:name => "Name",
-        :type => ['route', 'political'],
+        :types => ['route', 'political'],
         :neLat => 1.5,
         :neLng => 1.6,
         :swLat => 1.7,

@@ -5,7 +5,7 @@ describe "localities/index.html.haml" do
     assign(:localities, [
       stub_model(Locality,
         :name => "Name",
-        :type => ['route', 'political'],
+        :types => ['route', 'political'],
         :neLat => 1.5,
         :neLng => 1.6,
         :swLat => 1.7,
@@ -13,7 +13,7 @@ describe "localities/index.html.haml" do
       ),
       stub_model(Locality,
         :name => "Name",
-        :type => ['route', 'political'],
+        :types => ['route', 'political'],
         :neLat => 1.5,
         :neLng => 1.6,
         :swLat => 1.7,

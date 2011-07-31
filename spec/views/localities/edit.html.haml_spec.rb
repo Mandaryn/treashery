@@ -4,7 +4,7 @@ describe "localities/edit.html.haml" do
   before(:each) do
     @locality = assign(:locality, stub_model(Locality,
       :name => "MyString",
-      :type => ['political', 'route'],
+      :types => ['political', 'route'],
       :neLat => 1.5,
       :neLng => 1.5,
       :swLat => 1.5,

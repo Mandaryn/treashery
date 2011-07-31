@@ -1,13 +1,13 @@
 class Locality
   include Mongoid::Document
   field :name, type: String
-  field :type, type: Array, default: []
+  field :types, type: Array, default: []
   field :neLat, type: Float
   field :neLng, type: Float
   field :swLat, type: Float
   field :swLng, type: Float
 
-  validates :name, :type, :neLat, :neLng, :swLat, :swLng, presence: true
+  validates :name, :types, :neLat, :neLng, :swLat, :swLng, presence: true
   validates :neLat, :swLat, numericality: {greater_than_or_equal_to: -90, less_than_or_equal_to: 90}
   validates :neLng, :swLng, numericality: {greater_than_or_equal_to: -180, less_than_or_equal_to: 180}
 

@@ -7,7 +7,7 @@
           %li= msg
 
   = f.input :name
-  = f.input :type, collection: Locality::TYPES, as: :check_boxes, label_method: :to_s, value_method: :to_s
+  = f.input :types, collection: Locality::TYPES, as: :check_boxes, label_method: :to_s, value_method: :to_s
   = f.input :neLat
   = f.input :neLng
   = f.input :swLat
