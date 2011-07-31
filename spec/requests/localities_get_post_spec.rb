@@ -1,29 +1,29 @@
 require 'spec_helper'
 
 describe "Locality" do
-  
+
   def valid_attributes
   {
     :name => "Locality test",
-    :types => ['country'], 
+    :types => ['country'],
     :neLat => 22.0,
     :neLng => 23.0,
     :swLat => 24.0,
-    :swLng => 25.0    
+    :swLng => 25.0
   }
   end
-  
+
   describe "GET /localities" do
     before do
       Locality.create! valid_attributes
     end
-    
+
     it "displays localities" do
       visit localities_path
       page.should have_content("Locality test")
     end
   end
-  
+
   describe "POST /localities" do
     it "create localities" do
       visit new_locality_path
@@ -37,5 +37,5 @@ describe "Locality" do
       page.should have_content("30.0")
       page.should have_content("country")
     end
-  end 
+  end
 end

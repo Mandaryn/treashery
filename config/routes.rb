@@ -1,7 +1,7 @@
 Treashery::Application.routes.draw do
-  get "pages/faq" 
+  get "pages/faq"
   match "faq" => "pages#faq", :as => :faq
-  
+
   get "pages/about"
   match "about" => "pages#about", :as => :about
 

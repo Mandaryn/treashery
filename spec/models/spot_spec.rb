@@ -13,20 +13,20 @@ describe Spot do
         :swLng => 1.8
       )
     end
-    
+
     it  "should show spots inside bounds" do
       #dodaj spot do tablicy
       Spot.bounded(20,20,40,40).to_a.should eq([@spotInside])
     end
-    
+
     it "should return all spots" do
       Spot.all.to_a
     end
-    
+
     it "should not return spot that is outside bounds" do
       Spot.bounded(20,20,40,40).to_a.should_not eq([@spotOutside])
     end
-    
+
     it "should return all spots if bounded doesn't have any attributes" do
       Spot.bounded(nil, nil, nil, nil).to_a.should eq([@spotInside, @spotOutside])
     end
@@ -42,10 +42,10 @@ describe Spot do
         :swLat => 1.7,
         :swLng => 1.8
       )
-      
+
       @spotInside.locality = @locality
     end
-    
+
     it "should be associated with locality" do
       @spotInside.locality.should eq(@locality)
     end

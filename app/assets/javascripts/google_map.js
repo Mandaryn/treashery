@@ -9,13 +9,13 @@ $(document).ready(function initialize() {
 
 function showMap() {
   geocoder = new google.maps.Geocoder();
-  var latlng = new google.maps.LatLng(51.994649, 19.039774); 
+  var latlng = new google.maps.LatLng(51.994649, 19.039774);
   var myOptions = {
     zoom: 6,
     center: latlng,
     mapTypeId: google.maps.MapTypeId.ROADMAP
   };
-  map = new google.maps.Map(document.getElementById("google_map"),myOptions);   
+  map = new google.maps.Map(document.getElementById("google_map"),myOptions);
   addSpot();
   addSmallMarkers();
   google.maps.event.addListener(map, 'tilesloaded', function() {
@@ -77,9 +77,9 @@ function addSpot() {
     var infoWindow = new google.maps.InfoWindow({
       content: link,
       position: event.latLng
-    });    
-    infoWindow.open(map);    
-  });      
+    });
+    infoWindow.open(map);
+  });
 };
 
 function addSmallMarkers() {
@@ -89,7 +89,7 @@ function addSmallMarkers() {
       var lng = parseFloat(element.lng);
       var name = element.name;
       addSmallMarker(lat, lng, name);
-    }); 
+    });
   });
 };
 

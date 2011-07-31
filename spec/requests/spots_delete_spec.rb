@@ -11,5 +11,5 @@ describe "Spots" do
       click_link "Destroy"
       page.should have_no_content("Spot test 2")
     end
-  end  
+  end
 end

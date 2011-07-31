@@ -27,7 +27,7 @@ describe SpotsController do
     {
       :name => "Spot!",
       :lat => 51.0,
-      :lng => 22.0    
+      :lng => 22.0
     }
   end
 
