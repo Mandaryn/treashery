@@ -85,10 +85,9 @@ function addSpot() {
 function addSmallMarkers() {
   $.getJSON('/spots.json', function(spot) {
     $.each(spot, function(index, element) {
-      var lat = parseFloat(element.lat);
-      var lng = parseFloat(element.lng);
-      var name = element.name;
-      addSmallMarker(lat, lng, name);
+      var lat = parseFloat(element.location.lat);
+      var lng = parseFloat(element.location.lng);
+      addSmallMarker(lat, lng, element.name);
     });
   });
 };
