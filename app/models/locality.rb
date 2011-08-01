@@ -8,5 +8,5 @@ class Locality
 
   validates :formatted_address, :types, :geometry, presence: true
 
-  validates_uniqueness_of :formatted_address, scope: :types
+  validates_uniqueness_of :formatted_address, scope: [:type, :address_component]
 end
