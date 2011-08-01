@@ -9,16 +9,33 @@ class Spot
 
   field :name, type: String
   field :description, type: String
+  field :type, type: String
 
   before_save :set_coordinates
   before_save :reverse_geocode
 
-  validates :name, presence: true
+  validates :name, :type, presence: true
   paginates_per 10
+  
+  TYPES = ['Medical waste',
+    'Electronic waste',
+    'Animal by-products',
+    'Radioactive waste',
+    'Food waste',
+    'Other'  
+  ]
 
   scope :bounded, ->(swLng, swLat, neLng, neLat) {
     if swLng.present? && swLat.present? && neLng.present? && neLat.present?
       where(:coordinates.within => {"$box" => [[swLng.to_f, swLat.to_f], [neLng.to_f, neLat.to_f]]})
+    else
+      all
+    end
+  }
+  
+  scope :typed, ->(type)  {
+    if type.present?
+      where(:type => type)
     else
       all
     end

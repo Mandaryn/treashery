@@ -1,6 +1,6 @@
 class SpotsController < ApplicationController
   def index
-    @spots = Spot.bounded(params[:swLng], params[:swLat], params[:neLng], params[:neLat])
+    @spots = Spot.bounded(params[:swLng], params[:swLat], params[:neLng], params[:neLat]).typed(params[:type])
 
     respond_to do |format|
       format.html { @spots = @spots.page(params[:page])}
