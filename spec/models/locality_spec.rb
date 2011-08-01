@@ -21,6 +21,20 @@ describe Locality do
 
       Locality.count.should == 4
     end
+
+    it "should be nested according to address components hierarchy" do
+      egypt = Locality.all[0]
+      egypt.formatted_address.should == "Egypt"
+
+      matrouh = egypt.localities.first
+      matrouh.formatted_address.should == "Matrouh, Egypt"
+
+      markaz = matrouh.localities.first
+      markaz.formatted_address.should == "Markaz El-hamam, Matrouh, Egypt"
+
+      wadi = markaz.localities.first
+      wadi.formatted_address.should == "Wadi Al Netroun - Al Deblomasein Rd, Markaz El-hamam, Egypt"
+    end
   end
 
   context "when two spots are created" do
@@ -46,6 +60,23 @@ describe Locality do
       Locality.all[4].types.should == ["administrative_area_level_1", "political"]
 
       Locality.count.should == 5
+    end
+
+    it "should be nested according to address components hierarchy" do
+      egypt = Locality.all[0]
+      egypt.formatted_address.should == "Egypt"
+
+      behaira = egypt.localities.last
+      behaira.formatted_address.should == "Al - Behaira, Egypt"
+
+      matrouh = egypt.localities.first
+      matrouh.formatted_address.should == "Matrouh, Egypt"
+
+      markaz = matrouh.localities.first
+      markaz.formatted_address.should == "Markaz El-hamam, Matrouh, Egypt"
+
+      wadi = markaz.localities.first
+      wadi.formatted_address.should == "Wadi Al Netroun - Al Deblomasein Rd, Markaz El-hamam, Egypt"
     end
   end
 end

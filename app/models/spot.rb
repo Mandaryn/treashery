@@ -12,6 +12,7 @@ class Spot
 
   before_save :set_coordinates
   before_save :reverse_geocode
+  has_many :localities
 
   validates :name, presence: true
   paginates_per 10
@@ -29,8 +30,16 @@ class Spot
   end
 
   def reverse_geocode
+    possible_parents = []
     Geocoder.search(coordinates).reverse.each do |result|
-      Locality.create(result.data)
+      locality = Locality.create(result.data)
+      if locality.persisted?
+        locality.update_attributes(locality: locality.find_best_parent(possible_parents))
+      else
+        locality = Locality.where(address_components: result.address_components).first
+      end
+      possible_parents << locality
     end
+    self.localities = possible_parents.compact
   end
 end
