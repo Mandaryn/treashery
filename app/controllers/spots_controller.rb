@@ -20,8 +20,8 @@ class SpotsController < ApplicationController
   end
 
   def new
-    @spot = Spot.new(lat: params[:lat], lng: params[:lng])
-    @spot.build_location
+    @spot = Spot.new
+    @spot.build_location(lat: params[:lat], lng: params[:lng])
 
     respond_to do |format|
       format.html
