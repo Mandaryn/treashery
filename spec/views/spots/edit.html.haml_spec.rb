@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe "spots/edit.html.haml" do
-  before(:each) do
+  before do
     @spot = assign(:spot, Factory.stub(:spot))
   end
 

@@ -2,7 +2,7 @@
 require 'spec_helper'
 
 describe "spots/index.html.haml" do
-  before(:each) do
+  before do
     assign(:spots, [Factory.stub(:spot, name: 'Śmieci'), Factory.stub(:spot, name: 'Wrak')])
   end
 

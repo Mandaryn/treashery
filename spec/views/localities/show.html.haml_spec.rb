@@ -2,7 +2,7 @@
 require 'spec_helper'
 
 describe "localities/show.html.haml" do
-  before(:each) do
+  before do
     @locality = assign(:locality, Factory.stub(:locality, formatted_address: 'Łódź', types: ['sublocality']))
   end
 

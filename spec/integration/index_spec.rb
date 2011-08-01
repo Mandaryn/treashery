@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe "Root page" do
-  before(:each) do
+  before do
     @inside1 = Spot.create!(name: "inside1", location: Point.new(lng: 20.0, lat: 51.0))
     @inside2 = Spot.create!(name: "inside2", location: Point.new(lng: 22.0, lat: 51.0))
     @outside = Spot.create!(name: "outside", location: Point.new(lng: 0.0, lat: 0.0))

@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe "spots/new.html.haml" do
-  before(:each) do
+  before do
     assign(:spot, Factory.build(:spot))
   end
 

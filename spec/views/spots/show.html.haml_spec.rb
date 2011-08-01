@@ -2,7 +2,7 @@
 require 'spec_helper'
 
 describe "spots/show.html.haml" do
-  before(:each) do
+  before do
     @spot = assign(:spot, Factory.stub(:spot, name: "Śmieci", description: 'duże', location: Point.new(lat: 10.0, lng: 10.2)))
   end
 

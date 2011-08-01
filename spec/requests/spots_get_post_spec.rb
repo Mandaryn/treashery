@@ -2,7 +2,7 @@
 require 'spec_helper'
 
 describe "Spots" do
-  before(:each) do
+  before do
       @spot = Factory(:spot, name: "Śmieci")
   end
 
