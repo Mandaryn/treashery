@@ -26,7 +26,7 @@ class Spot
   }
 
   def set_coordinates
-    self.coordinates = [location.lat, location.lng]
+    self.coordinates = [location.lng, location.lat]
   end
 
   def reverse_geocode
