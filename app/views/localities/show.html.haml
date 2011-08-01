@@ -3,34 +3,10 @@
 %p#notice= notice
 
 %p
-  %b Name:
-  = @locality.name
+  %b Address:
+  = @locality.formatted_address
 %p
   %b Types:
   %ul
   - @locality.types.each do |type|
     %li= type
-%p
-  %b Nelat:
-  = @locality.neLat
-%p
-  %b Nelng:
-  = @locality.neLng
-%p
-  %b Swlat:
-  = @locality.swLat
-%p
-  %b Swlng:
-  = @locality.swLng
-%p
-  %b Spots:
-  %ul
-  - @spots = @locality.spots
-  - @spots.each do |spot|
-    %li= spot.name
-
-= link_to 'Edit', edit_locality_path(@locality)
-\|
-= link_to 'Back', localities_path
-\|
-= link_to 'Destroy', @locality, :confirm => 'Are you sure?', :method => :delete

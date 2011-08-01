@@ -9,7 +9,7 @@ class GeocodingService
 
   def self.create_locations(results)
     results.select{|res| (res.types & Locality::TYPES).any?}.each do |result|
-      Locality.create!(result.data.merge(name: result.address_components.first["long_name"]))
+      Locality.create(result.data.merge(name: result.address_components.first["long_name"]))
     end
   end
 end

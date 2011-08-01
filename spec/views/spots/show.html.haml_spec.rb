@@ -3,7 +3,7 @@ require 'spec_helper'
 
 describe "spots/show.html.haml" do
   before(:each) do
-    @spot = assign(:spot, Factory.stub(:spot, name: "Śmieci", description: 'duże', lat: 10.0, lng: 10.2))
+    @spot = assign(:spot, Factory.stub(:spot, name: "Śmieci", description: 'duże', location: Point.new(lat: 10.0, lng: 10.2)))
   end
 
   it "renders attributes" do

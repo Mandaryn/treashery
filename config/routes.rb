@@ -3,7 +3,7 @@ Treashery::Application.routes.draw do
   match "about" => "pages#about", :as => :about
   match "contact" => "pages#contact", :as => :contact
 
-  resources :localities
+  resources :localities, only: :show
 
   resources :spots
   root :to => 'spots#index'

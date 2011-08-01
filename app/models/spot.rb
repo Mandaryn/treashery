@@ -1,45 +1,36 @@
 class Spot
   include Mongoid::Document
   include Geocoder::Model::Mongoid
-  field :name, type: String
-  field :lng, type: Float
-  field :lat, type: Float
-  field :location, type: Array
-  index [[ :location, Mongo::GEO2D ]], min: -180, max: 180
-  field :description, type: String
-  field :address, type: String
-  field :tags, type: Array, default: []
 
-  reverse_geocoded_by :location do |spot,results|
-    spot.tags = GeocodingService.location_tags(results)
-    spot.address = GeocodingService.address(results)
-    GeocodingService.create_locations(results)
-  end
-  before_save :generate_location
+  embeds_one :location, class_name: 'Point'
+  accepts_nested_attributes_for :location
+  field :coordinates, type: Array
+  index [[ :coordinates, Mongo::GEO2D ]], min: -180, max: 180
+
+  field :name, type: String
+  field :description, type: String
+
+  before_save :set_coordinates
   before_save :reverse_geocode
 
-  validates :name, :lat, :lng, presence: true
-  validates :lat, numericality: { greater_than_or_equal_to: -90, less_than_or_equal_to: 90 }
-  validates :lng, numericality: { greater_than_or_equal_to: -180, less_than_or_equal_to: 180 }
-
+  validates :name, presence: true
   paginates_per 10
-
-  validates_presence_of :name, :lat, :lng
-  validates_numericality_of :lat, :greater_than_or_equal_to => -90, :less_than_or_equal_to => 90
-  validates_numericality_of :lng, :greater_than_or_equal_to => -180, :less_than_or_equal_to => 180
-
-  belongs_to :locality
 
   scope :bounded, ->(swLng, swLat, neLng, neLat) {
     if swLng.present? && swLat.present? && neLng.present? && neLat.present?
-      where(:location.within => {"$box" => [[swLng.to_f, swLat.to_f], [neLng.to_f, neLat.to_f]]})
+      where(:coordinates.within => {"$box" => [[swLng.to_f, swLat.to_f], [neLng.to_f, neLat.to_f]]})
     else
       all
     end
   }
 
-  protected
-  def generate_location
-    self.location = [lng, lat]
+  def set_coordinates
+    self.coordinates = [location.lat, location.lng]
+  end
+
+  def reverse_geocode
+    Geocoder.search(coordinates).reverse.each do |result|
+      Locality.create(result.data)
+    end
   end
 end

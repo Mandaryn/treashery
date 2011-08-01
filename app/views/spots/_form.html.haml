@@ -6,11 +6,8 @@
         - @spot.errors.full_messages.each do |msg|
           %li= msg
   = f.input :name
-  = f.input :lat
-  = f.input :lng
-  = f.input :address
-  .get_address
-    = link_to "Get location's address", '#', class: 'get_address'
-  = f.input :locality_id, collection: Locality.all
+  = f.simple_fields_for :location do |location_form|
+    = location_form.input :lat
+    = location_form.input :lng
   = f.input :description, as: :text
   = f.button :submit

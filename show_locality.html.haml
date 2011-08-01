@@ -1,8 +1,0 @@
-%h1 List of localities and sublocalities
-
-
-- @localities.each do |locality|
-  %p= locality.name
-    %p- @spots = @locality.spots
-      -@spots.each do |spot|
-        %li= spot.name

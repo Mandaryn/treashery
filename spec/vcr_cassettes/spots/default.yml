@@ -561,3 +561,517 @@
       \              }\n            }\n         },\n         \"types\" : [ \"country\",
       \"political\" ]\n      }\n   ],\n   \"status\" : \"OK\"\n}\n"
     http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: http://maps.google.com:80/maps/api/geocode/json?language=en&latlng=%2C&sensor=false
+    body: !!null 
+    headers: !!null 
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      content-type:
+      - application/json; charset=UTF-8
+      date:
+      - Sun, 31 Jul 2011 23:53:06 GMT
+      expires:
+      - Mon, 01 Aug 2011 23:53:06 GMT
+      cache-control:
+      - public, max-age=86400
+      server:
+      - mafe
+      x-xss-protection:
+      - 1; mode=block
+      transfer-encoding:
+      - chunked
+    body: ! "{\n   \"results\" : [],\n   \"status\" : \"ZERO_RESULTS\"\n}\n"
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: http://maps.google.com:80/maps/api/geocode/json?language=en&latlng=30.0%2C30.1&sensor=false
+    body: !!null 
+    headers: !!null 
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      content-type:
+      - application/json; charset=UTF-8
+      date:
+      - Mon, 01 Aug 2011 00:20:01 GMT
+      expires:
+      - Tue, 02 Aug 2011 00:20:01 GMT
+      cache-control:
+      - public, max-age=86400
+      server:
+      - mafe
+      x-xss-protection:
+      - 1; mode=block
+      transfer-encoding:
+      - chunked
+    body: ! "{\n   \"results\" : [\n      {\n         \"address_components\" : [\n
+      \           {\n               \"long_name\" : \"Wadi Al Netroun - Al Deblomasein
+      Rd\",\n               \"short_name\" : \"Wadi Al Netroun - Al Deblomasein Rd\",\n
+      \              \"types\" : [ \"route\" ]\n            },\n            {\n               \"long_name\"
+      : \"Markaz El-hamam\",\n               \"short_name\" : \"Markaz El-hamam\",\n
+      \              \"types\" : [ \"administrative_area_level_2\", \"political\"
+      ]\n            },\n            {\n               \"long_name\" : \"Egypt\",\n
+      \              \"short_name\" : \"EG\",\n               \"types\" : [ \"country\",
+      \"political\" ]\n            }\n         ],\n         \"formatted_address\"
+      : \"Wadi Al Netroun - Al Deblomasein Rd, Markaz El-hamam, Egypt\",\n         \"geometry\"
+      : {\n            \"bounds\" : {\n               \"northeast\" : {\n                  \"lat\"
+      : 30.35086860,\n                  \"lng\" : 30.31417510\n               },\n
+      \              \"southwest\" : {\n                  \"lat\" : 30.0890160,\n
+      \                 \"lng\" : 30.03054410\n               }\n            },\n
+      \           \"location\" : {\n               \"lat\" : 30.24242590,\n               \"lng\"
+      : 30.15507989999999\n            },\n            \"location_type\" : \"APPROXIMATE\",\n
+      \           \"viewport\" : {\n               \"northeast\" : {\n                  \"lat\"
+      : 30.35086860,\n                  \"lng\" : 30.31417510\n               },\n
+      \              \"southwest\" : {\n                  \"lat\" : 30.0890160,\n
+      \                 \"lng\" : 30.03054410\n               }\n            }\n         },\n
+      \        \"types\" : [ \"route\" ]\n      },\n      {\n         \"address_components\"
+      : [\n            {\n               \"long_name\" : \"Markaz El-hamam\",\n               \"short_name\"
+      : \"Markaz El-hamam\",\n               \"types\" : [ \"administrative_area_level_2\",
+      \"political\" ]\n            },\n            {\n               \"long_name\"
+      : \"Matruh\",\n               \"short_name\" : \"Matruh\",\n               \"types\"
+      : [ \"administrative_area_level_1\", \"political\" ]\n            },\n            {\n
+      \              \"long_name\" : \"Egypt\",\n               \"short_name\" : \"EG\",\n
+      \              \"types\" : [ \"country\", \"political\" ]\n            }\n         ],\n
+      \        \"formatted_address\" : \"Markaz El-hamam, Matrouh, Egypt\",\n         \"geometry\"
+      : {\n            \"bounds\" : {\n               \"northeast\" : {\n                  \"lat\"
+      : 30.8934580,\n                  \"lng\" : 30.63586550\n               },\n
+      \              \"southwest\" : {\n                  \"lat\" : 28.7002230,\n
+      \                 \"lng\" : 28.3638380\n               }\n            },\n            \"location\"
+      : {\n               \"lat\" : 29.99735180,\n               \"lng\" : 29.04599270\n
+      \           },\n            \"location_type\" : \"APPROXIMATE\",\n            \"viewport\"
+      : {\n               \"northeast\" : {\n                  \"lat\" : 30.8934580,\n
+      \                 \"lng\" : 30.63586550\n               },\n               \"southwest\"
+      : {\n                  \"lat\" : 28.7002230,\n                  \"lng\" : 28.3638380\n
+      \              }\n            }\n         },\n         \"types\" : [ \"administrative_area_level_2\",
+      \"political\" ]\n      },\n      {\n         \"address_components\" : [\n            {\n
+      \              \"long_name\" : \"Matruh\",\n               \"short_name\" :
+      \"Matruh\",\n               \"types\" : [ \"administrative_area_level_1\", \"political\"
+      ]\n            },\n            {\n               \"long_name\" : \"Egypt\",\n
+      \              \"short_name\" : \"EG\",\n               \"types\" : [ \"country\",
+      \"political\" ]\n            }\n         ],\n         \"formatted_address\"
+      : \"Matrouh, Egypt\",\n         \"geometry\" : {\n            \"bounds\" : {\n
+      \              \"northeast\" : {\n                  \"lat\" : 31.66420,\n                  \"lng\"
+      : 30.36519999999999\n               },\n               \"southwest\" : {\n                  \"lat\"
+      : 27.96150,\n                  \"lng\" : 24.69720\n               }\n            },\n
+      \           \"location\" : {\n               \"lat\" : 29.5696350,\n               \"lng\"
+      : 26.4193890\n            },\n            \"location_type\" : \"APPROXIMATE\",\n
+      \           \"viewport\" : {\n               \"northeast\" : {\n                  \"lat\"
+      : 31.66420,\n                  \"lng\" : 30.36519999999999\n               },\n
+      \              \"southwest\" : {\n                  \"lat\" : 27.96150,\n                  \"lng\"
+      : 24.69720\n               }\n            }\n         },\n         \"types\"
+      : [ \"administrative_area_level_1\", \"political\" ]\n      },\n      {\n         \"address_components\"
+      : [\n            {\n               \"long_name\" : \"Egypt\",\n               \"short_name\"
+      : \"EG\",\n               \"types\" : [ \"country\", \"political\" ]\n            }\n
+      \        ],\n         \"formatted_address\" : \"Egypt\",\n         \"geometry\"
+      : {\n            \"bounds\" : {\n               \"northeast\" : {\n                  \"lat\"
+      : 31.81220,\n                  \"lng\" : 37.05690\n               },\n               \"southwest\"
+      : {\n                  \"lat\" : 22.0,\n                  \"lng\" : 24.69549640\n
+      \              }\n            },\n            \"location\" : {\n               \"lat\"
+      : 26.8205530,\n               \"lng\" : 30.8024980\n            },\n            \"location_type\"
+      : \"APPROXIMATE\",\n            \"viewport\" : {\n               \"northeast\"
+      : {\n                  \"lat\" : 31.81220,\n                  \"lng\" : 37.05690\n
+      \              },\n               \"southwest\" : {\n                  \"lat\"
+      : 22.0,\n                  \"lng\" : 24.69549640\n               }\n            }\n
+      \        },\n         \"types\" : [ \"country\", \"political\" ]\n      }\n
+      \  ],\n   \"status\" : \"OK\"\n}\n"
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: http://maps.google.com:80/maps/api/geocode/json?language=en&latlng=30.1%2C30.1&sensor=false
+    body: !!null 
+    headers: !!null 
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      content-type:
+      - application/json; charset=UTF-8
+      date:
+      - Mon, 01 Aug 2011 00:22:37 GMT
+      expires:
+      - Tue, 02 Aug 2011 00:22:37 GMT
+      cache-control:
+      - public, max-age=86400
+      server:
+      - mafe
+      x-xss-protection:
+      - 1; mode=block
+      transfer-encoding:
+      - chunked
+    body: ! "{\n   \"results\" : [\n      {\n         \"address_components\" : [\n
+      \           {\n               \"long_name\" : \"Wadi Al Netroun - Al Deblomasein
+      Rd\",\n               \"short_name\" : \"Wadi Al Netroun - Al Deblomasein Rd\",\n
+      \              \"types\" : [ \"route\" ]\n            },\n            {\n               \"long_name\"
+      : \"Markaz El-hamam\",\n               \"short_name\" : \"Markaz El-hamam\",\n
+      \              \"types\" : [ \"administrative_area_level_2\", \"political\"
+      ]\n            },\n            {\n               \"long_name\" : \"Egypt\",\n
+      \              \"short_name\" : \"EG\",\n               \"types\" : [ \"country\",
+      \"political\" ]\n            }\n         ],\n         \"formatted_address\"
+      : \"Wadi Al Netroun - Al Deblomasein Rd, Markaz El-hamam, Egypt\",\n         \"geometry\"
+      : {\n            \"bounds\" : {\n               \"northeast\" : {\n                  \"lat\"
+      : 30.35086860,\n                  \"lng\" : 30.31417510\n               },\n
+      \              \"southwest\" : {\n                  \"lat\" : 30.0890160,\n
+      \                 \"lng\" : 30.03054410\n               }\n            },\n
+      \           \"location\" : {\n               \"lat\" : 30.24242590,\n               \"lng\"
+      : 30.15507989999999\n            },\n            \"location_type\" : \"APPROXIMATE\",\n
+      \           \"viewport\" : {\n               \"northeast\" : {\n                  \"lat\"
+      : 30.35086860,\n                  \"lng\" : 30.31417510\n               },\n
+      \              \"southwest\" : {\n                  \"lat\" : 30.0890160,\n
+      \                 \"lng\" : 30.03054410\n               }\n            }\n         },\n
+      \        \"types\" : [ \"route\" ]\n      },\n      {\n         \"address_components\"
+      : [\n            {\n               \"long_name\" : \"Markaz El-hamam\",\n               \"short_name\"
+      : \"Markaz El-hamam\",\n               \"types\" : [ \"administrative_area_level_2\",
+      \"political\" ]\n            },\n            {\n               \"long_name\"
+      : \"Matruh\",\n               \"short_name\" : \"Matruh\",\n               \"types\"
+      : [ \"administrative_area_level_1\", \"political\" ]\n            },\n            {\n
+      \              \"long_name\" : \"Egypt\",\n               \"short_name\" : \"EG\",\n
+      \              \"types\" : [ \"country\", \"political\" ]\n            }\n         ],\n
+      \        \"formatted_address\" : \"Markaz El-hamam, Matrouh, Egypt\",\n         \"geometry\"
+      : {\n            \"bounds\" : {\n               \"northeast\" : {\n                  \"lat\"
+      : 30.8934580,\n                  \"lng\" : 30.63586550\n               },\n
+      \              \"southwest\" : {\n                  \"lat\" : 28.7002230,\n
+      \                 \"lng\" : 28.3638380\n               }\n            },\n            \"location\"
+      : {\n               \"lat\" : 29.99735180,\n               \"lng\" : 29.04599270\n
+      \           },\n            \"location_type\" : \"APPROXIMATE\",\n            \"viewport\"
+      : {\n               \"northeast\" : {\n                  \"lat\" : 30.8934580,\n
+      \                 \"lng\" : 30.63586550\n               },\n               \"southwest\"
+      : {\n                  \"lat\" : 28.7002230,\n                  \"lng\" : 28.3638380\n
+      \              }\n            }\n         },\n         \"types\" : [ \"administrative_area_level_2\",
+      \"political\" ]\n      },\n      {\n         \"address_components\" : [\n            {\n
+      \              \"long_name\" : \"Matruh\",\n               \"short_name\" :
+      \"Matruh\",\n               \"types\" : [ \"administrative_area_level_1\", \"political\"
+      ]\n            },\n            {\n               \"long_name\" : \"Egypt\",\n
+      \              \"short_name\" : \"EG\",\n               \"types\" : [ \"country\",
+      \"political\" ]\n            }\n         ],\n         \"formatted_address\"
+      : \"Matrouh, Egypt\",\n         \"geometry\" : {\n            \"bounds\" : {\n
+      \              \"northeast\" : {\n                  \"lat\" : 31.66420,\n                  \"lng\"
+      : 30.36519999999999\n               },\n               \"southwest\" : {\n                  \"lat\"
+      : 27.96150,\n                  \"lng\" : 24.69720\n               }\n            },\n
+      \           \"location\" : {\n               \"lat\" : 29.5696350,\n               \"lng\"
+      : 26.4193890\n            },\n            \"location_type\" : \"APPROXIMATE\",\n
+      \           \"viewport\" : {\n               \"northeast\" : {\n                  \"lat\"
+      : 31.66420,\n                  \"lng\" : 30.36519999999999\n               },\n
+      \              \"southwest\" : {\n                  \"lat\" : 27.96150,\n                  \"lng\"
+      : 24.69720\n               }\n            }\n         },\n         \"types\"
+      : [ \"administrative_area_level_1\", \"political\" ]\n      },\n      {\n         \"address_components\"
+      : [\n            {\n               \"long_name\" : \"Egypt\",\n               \"short_name\"
+      : \"EG\",\n               \"types\" : [ \"country\", \"political\" ]\n            }\n
+      \        ],\n         \"formatted_address\" : \"Egypt\",\n         \"geometry\"
+      : {\n            \"bounds\" : {\n               \"northeast\" : {\n                  \"lat\"
+      : 31.81220,\n                  \"lng\" : 37.05690\n               },\n               \"southwest\"
+      : {\n                  \"lat\" : 22.0,\n                  \"lng\" : 24.69549640\n
+      \              }\n            },\n            \"location\" : {\n               \"lat\"
+      : 26.8205530,\n               \"lng\" : 30.8024980\n            },\n            \"location_type\"
+      : \"APPROXIMATE\",\n            \"viewport\" : {\n               \"northeast\"
+      : {\n                  \"lat\" : 31.81220,\n                  \"lng\" : 37.05690\n
+      \              },\n               \"southwest\" : {\n                  \"lat\"
+      : 22.0,\n                  \"lng\" : 24.69549640\n               }\n            }\n
+      \        },\n         \"types\" : [ \"country\", \"political\" ]\n      }\n
+      \  ],\n   \"status\" : \"OK\"\n}\n"
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: http://maps.google.com:80/maps/api/geocode/json?language=en&latlng=31.1%2C31.1&sensor=false
+    body: !!null 
+    headers: !!null 
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      content-type:
+      - application/json; charset=UTF-8
+      date:
+      - Mon, 01 Aug 2011 00:23:17 GMT
+      expires:
+      - Tue, 02 Aug 2011 00:23:17 GMT
+      cache-control:
+      - public, max-age=86400
+      server:
+      - mafe
+      x-xss-protection:
+      - 1; mode=block
+      transfer-encoding:
+      - chunked
+    body: ! "{\n   \"results\" : [\n      {\n         \"address_components\" : [\n
+      \           {\n               \"long_name\" : \"Al Shahid - Kafer Dakhamis\",\n
+      \              \"short_name\" : \"Al Shahid - Kafer Dakhamis\",\n               \"types\"
+      : [ \"route\" ]\n            },\n            {\n               \"long_name\"
+      : \"Al - Mahalah Al - Kobra\",\n               \"short_name\" : \"Al - Mahalah
+      Al - Kobra\",\n               \"types\" : [ \"administrative_area_level_2\",
+      \"political\" ]\n            },\n            {\n               \"long_name\"
+      : \"Al Gharbiyah\",\n               \"short_name\" : \"Al Gharbiyah\",\n               \"types\"
+      : [ \"administrative_area_level_1\", \"political\" ]\n            },\n            {\n
+      \              \"long_name\" : \"Egypt\",\n               \"short_name\" : \"EG\",\n
+      \              \"types\" : [ \"country\", \"political\" ]\n            }\n         ],\n
+      \        \"formatted_address\" : \"Al Shahid - Kafer Dakhamis, Al - Mahalah
+      Al - Kobra, Al - Gharbiya, Egypt\",\n         \"geometry\" : {\n            \"bounds\"
+      : {\n               \"northeast\" : {\n                  \"lat\" : 31.10403630,\n
+      \                 \"lng\" : 31.11870870\n               },\n               \"southwest\"
+      : {\n                  \"lat\" : 31.09686120,\n                  \"lng\" : 31.07297870\n
+      \              }\n            },\n            \"location\" : {\n               \"lat\"
+      : 31.10014370,\n               \"lng\" : 31.09570910\n            },\n            \"location_type\"
+      : \"APPROXIMATE\",\n            \"viewport\" : {\n               \"northeast\"
+      : {\n                  \"lat\" : 31.10403630,\n                  \"lng\" : 31.11870870\n
+      \              },\n               \"southwest\" : {\n                  \"lat\"
+      : 31.09686120,\n                  \"lng\" : 31.07297870\n               }\n
+      \           }\n         },\n         \"types\" : [ \"route\" ]\n      },\n      {\n
+      \        \"address_components\" : [\n            {\n               \"long_name\"
+      : \"Mansheyat Al - Awqaf\",\n               \"short_name\" : \"Mansheyat Al
+      - Awqaf\",\n               \"types\" : [ \"administrative_area_level_3\", \"political\"
+      ]\n            },\n            {\n               \"long_name\" : \"Al - Mahalah
+      Al - Kobra\",\n               \"short_name\" : \"Al - Mahalah Al - Kobra\",\n
+      \              \"types\" : [ \"administrative_area_level_2\", \"political\"
+      ]\n            },\n            {\n               \"long_name\" : \"Al Gharbiyah\",\n
+      \              \"short_name\" : \"Al Gharbiyah\",\n               \"types\"
+      : [ \"administrative_area_level_1\", \"political\" ]\n            },\n            {\n
+      \              \"long_name\" : \"Egypt\",\n               \"short_name\" : \"EG\",\n
+      \              \"types\" : [ \"country\", \"political\" ]\n            }\n         ],\n
+      \        \"formatted_address\" : \"Mansheyat Al - Awqaf, Al - Mahalah Al - Kobra,
+      Al - Gharbiya, Egypt\",\n         \"geometry\" : {\n            \"bounds\" :
+      {\n               \"northeast\" : {\n                  \"lat\" : 31.113090,\n
+      \                 \"lng\" : 31.11729570\n               },\n               \"southwest\"
+      : {\n                  \"lat\" : 31.08770350,\n                  \"lng\" : 31.07393030\n
+      \              }\n            },\n            \"location\" : {\n               \"lat\"
+      : 31.104680,\n               \"lng\" : 31.08510190\n            },\n            \"location_type\"
+      : \"APPROXIMATE\",\n            \"viewport\" : {\n               \"northeast\"
+      : {\n                  \"lat\" : 31.113090,\n                  \"lng\" : 31.11729570\n
+      \              },\n               \"southwest\" : {\n                  \"lat\"
+      : 31.08770350,\n                  \"lng\" : 31.07393030\n               }\n
+      \           }\n         },\n         \"types\" : [ \"administrative_area_level_3\",
+      \"political\" ]\n      },\n      {\n         \"address_components\" : [\n            {\n
+      \              \"long_name\" : \"Al - Mahalah Al - Kobra\",\n               \"short_name\"
+      : \"Al - Mahalah Al - Kobra\",\n               \"types\" : [ \"administrative_area_level_2\",
+      \"political\" ]\n            },\n            {\n               \"long_name\"
+      : \"Al Gharbiyah\",\n               \"short_name\" : \"Al Gharbiyah\",\n               \"types\"
+      : [ \"administrative_area_level_1\", \"political\" ]\n            },\n            {\n
+      \              \"long_name\" : \"Egypt\",\n               \"short_name\" : \"EG\",\n
+      \              \"types\" : [ \"country\", \"political\" ]\n            }\n         ],\n
+      \        \"formatted_address\" : \"Al - Mahalah Al - Kobra, Al - Gharbiya, Egypt\",\n
+      \        \"geometry\" : {\n            \"bounds\" : {\n               \"northeast\"
+      : {\n                  \"lat\" : 31.15835330,\n                  \"lng\" : 31.23836510\n
+      \              },\n               \"southwest\" : {\n                  \"lat\"
+      : 30.86850249999999,\n                  \"lng\" : 31.02537390\n               }\n
+      \           },\n            \"location\" : {\n               \"lat\" : 31.01648390,\n
+      \              \"lng\" : 31.12521350\n            },\n            \"location_type\"
+      : \"APPROXIMATE\",\n            \"viewport\" : {\n               \"northeast\"
+      : {\n                  \"lat\" : 31.15835330,\n                  \"lng\" : 31.23836510\n
+      \              },\n               \"southwest\" : {\n                  \"lat\"
+      : 30.86850249999999,\n                  \"lng\" : 31.02537390\n               }\n
+      \           }\n         },\n         \"types\" : [ \"administrative_area_level_2\",
+      \"political\" ]\n      },\n      {\n         \"address_components\" : [\n            {\n
+      \              \"long_name\" : \"Al Gharbiyah\",\n               \"short_name\"
+      : \"Al Gharbiyah\",\n               \"types\" : [ \"administrative_area_level_1\",
+      \"political\" ]\n            },\n            {\n               \"long_name\"
+      : \"Egypt\",\n               \"short_name\" : \"EG\",\n               \"types\"
+      : [ \"country\", \"political\" ]\n            }\n         ],\n         \"formatted_address\"
+      : \"Al - Gharbiya, Egypt\",\n         \"geometry\" : {\n            \"bounds\"
+      : {\n               \"northeast\" : {\n                  \"lat\" : 31.16450,\n
+      \                 \"lng\" : 31.3150\n               },\n               \"southwest\"
+      : {\n                  \"lat\" : 30.57640,\n                  \"lng\" : 30.74630\n
+      \              }\n            },\n            \"location\" : {\n               \"lat\"
+      : 30.87535560,\n               \"lng\" : 31.033510\n            },\n            \"location_type\"
+      : \"APPROXIMATE\",\n            \"viewport\" : {\n               \"northeast\"
+      : {\n                  \"lat\" : 31.16450,\n                  \"lng\" : 31.3150\n
+      \              },\n               \"southwest\" : {\n                  \"lat\"
+      : 30.57640,\n                  \"lng\" : 30.74630\n               }\n            }\n
+      \        },\n         \"types\" : [ \"administrative_area_level_1\", \"political\"
+      ]\n      },\n      {\n         \"address_components\" : [\n            {\n               \"long_name\"
+      : \"Egypt\",\n               \"short_name\" : \"EG\",\n               \"types\"
+      : [ \"country\", \"political\" ]\n            }\n         ],\n         \"formatted_address\"
+      : \"Egypt\",\n         \"geometry\" : {\n            \"bounds\" : {\n               \"northeast\"
+      : {\n                  \"lat\" : 31.81220,\n                  \"lng\" : 37.05690\n
+      \              },\n               \"southwest\" : {\n                  \"lat\"
+      : 22.0,\n                  \"lng\" : 24.69549640\n               }\n            },\n
+      \           \"location\" : {\n               \"lat\" : 26.8205530,\n               \"lng\"
+      : 30.8024980\n            },\n            \"location_type\" : \"APPROXIMATE\",\n
+      \           \"viewport\" : {\n               \"northeast\" : {\n                  \"lat\"
+      : 31.81220,\n                  \"lng\" : 37.05690\n               },\n               \"southwest\"
+      : {\n                  \"lat\" : 22.0,\n                  \"lng\" : 24.69549640\n
+      \              }\n            }\n         },\n         \"types\" : [ \"country\",
+      \"political\" ]\n      }\n   ],\n   \"status\" : \"OK\"\n}\n"
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: http://maps.google.com:80/maps/api/geocode/json?language=en&latlng=30.2%2C30.2&sensor=false
+    body: !!null 
+    headers: !!null 
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      content-type:
+      - application/json; charset=UTF-8
+      date:
+      - Mon, 01 Aug 2011 00:23:39 GMT
+      expires:
+      - Tue, 02 Aug 2011 00:23:39 GMT
+      cache-control:
+      - public, max-age=86400
+      server:
+      - mafe
+      x-xss-protection:
+      - 1; mode=block
+      transfer-encoding:
+      - chunked
+    body: ! "{\n   \"results\" : [\n      {\n         \"address_components\" : [\n
+      \           {\n               \"long_name\" : \"Wadi Al Netroun - Al Deblomasein
+      Rd\",\n               \"short_name\" : \"Wadi Al Netroun - Al Deblomasein Rd\",\n
+      \              \"types\" : [ \"route\" ]\n            },\n            {\n               \"long_name\"
+      : \"Markaz El-hamam\",\n               \"short_name\" : \"Markaz El-hamam\",\n
+      \              \"types\" : [ \"administrative_area_level_2\", \"political\"
+      ]\n            },\n            {\n               \"long_name\" : \"Egypt\",\n
+      \              \"short_name\" : \"EG\",\n               \"types\" : [ \"country\",
+      \"political\" ]\n            }\n         ],\n         \"formatted_address\"
+      : \"Wadi Al Netroun - Al Deblomasein Rd, Markaz El-hamam, Egypt\",\n         \"geometry\"
+      : {\n            \"bounds\" : {\n               \"northeast\" : {\n                  \"lat\"
+      : 30.35086860,\n                  \"lng\" : 30.31417510\n               },\n
+      \              \"southwest\" : {\n                  \"lat\" : 30.0890160,\n
+      \                 \"lng\" : 30.03054410\n               }\n            },\n
+      \           \"location\" : {\n               \"lat\" : 30.24242590,\n               \"lng\"
+      : 30.15507989999999\n            },\n            \"location_type\" : \"APPROXIMATE\",\n
+      \           \"viewport\" : {\n               \"northeast\" : {\n                  \"lat\"
+      : 30.35086860,\n                  \"lng\" : 30.31417510\n               },\n
+      \              \"southwest\" : {\n                  \"lat\" : 30.0890160,\n
+      \                 \"lng\" : 30.03054410\n               }\n            }\n         },\n
+      \        \"types\" : [ \"route\" ]\n      },\n      {\n         \"address_components\"
+      : [\n            {\n               \"long_name\" : \"Al Buhayrah\",\n               \"short_name\"
+      : \"Al Buhayrah\",\n               \"types\" : [ \"administrative_area_level_1\",
+      \"political\" ]\n            },\n            {\n               \"long_name\"
+      : \"Egypt\",\n               \"short_name\" : \"EG\",\n               \"types\"
+      : [ \"country\", \"political\" ]\n            }\n         ],\n         \"formatted_address\"
+      : \"Al - Behaira, Egypt\",\n         \"geometry\" : {\n            \"bounds\"
+      : {\n               \"northeast\" : {\n                  \"lat\" : 31.46950,\n
+      \                 \"lng\" : 30.91450\n               },\n               \"southwest\"
+      : {\n                  \"lat\" : 30.01570,\n                  \"lng\" : 29.6110\n
+      \              }\n            },\n            \"location\" : {\n               \"lat\"
+      : 30.51475780,\n               \"lng\" : 30.34355060\n            },\n            \"location_type\"
+      : \"APPROXIMATE\",\n            \"viewport\" : {\n               \"northeast\"
+      : {\n                  \"lat\" : 31.46950,\n                  \"lng\" : 30.91450\n
+      \              },\n               \"southwest\" : {\n                  \"lat\"
+      : 30.01570,\n                  \"lng\" : 29.6110\n               }\n            }\n
+      \        },\n         \"types\" : [ \"administrative_area_level_1\", \"political\"
+      ]\n      },\n      {\n         \"address_components\" : [\n            {\n               \"long_name\"
+      : \"Markaz El-hamam\",\n               \"short_name\" : \"Markaz El-hamam\",\n
+      \              \"types\" : [ \"administrative_area_level_2\", \"political\"
+      ]\n            },\n            {\n               \"long_name\" : \"Matruh\",\n
+      \              \"short_name\" : \"Matruh\",\n               \"types\" : [ \"administrative_area_level_1\",
+      \"political\" ]\n            },\n            {\n               \"long_name\"
+      : \"Egypt\",\n               \"short_name\" : \"EG\",\n               \"types\"
+      : [ \"country\", \"political\" ]\n            }\n         ],\n         \"formatted_address\"
+      : \"Markaz El-hamam, Matrouh, Egypt\",\n         \"geometry\" : {\n            \"bounds\"
+      : {\n               \"northeast\" : {\n                  \"lat\" : 30.8934580,\n
+      \                 \"lng\" : 30.63586550\n               },\n               \"southwest\"
+      : {\n                  \"lat\" : 28.7002230,\n                  \"lng\" : 28.3638380\n
+      \              }\n            },\n            \"location\" : {\n               \"lat\"
+      : 29.99735180,\n               \"lng\" : 29.04599270\n            },\n            \"location_type\"
+      : \"APPROXIMATE\",\n            \"viewport\" : {\n               \"northeast\"
+      : {\n                  \"lat\" : 30.8934580,\n                  \"lng\" : 30.63586550\n
+      \              },\n               \"southwest\" : {\n                  \"lat\"
+      : 28.7002230,\n                  \"lng\" : 28.3638380\n               }\n            }\n
+      \        },\n         \"types\" : [ \"administrative_area_level_2\", \"political\"
+      ]\n      },\n      {\n         \"address_components\" : [\n            {\n               \"long_name\"
+      : \"Egypt\",\n               \"short_name\" : \"EG\",\n               \"types\"
+      : [ \"country\", \"political\" ]\n            }\n         ],\n         \"formatted_address\"
+      : \"Egypt\",\n         \"geometry\" : {\n            \"bounds\" : {\n               \"northeast\"
+      : {\n                  \"lat\" : 31.81220,\n                  \"lng\" : 37.05690\n
+      \              },\n               \"southwest\" : {\n                  \"lat\"
+      : 22.0,\n                  \"lng\" : 24.69549640\n               }\n            },\n
+      \           \"location\" : {\n               \"lat\" : 26.8205530,\n               \"lng\"
+      : 30.8024980\n            },\n            \"location_type\" : \"APPROXIMATE\",\n
+      \           \"viewport\" : {\n               \"northeast\" : {\n                  \"lat\"
+      : 31.81220,\n                  \"lng\" : 37.05690\n               },\n               \"southwest\"
+      : {\n                  \"lat\" : 22.0,\n                  \"lng\" : 24.69549640\n
+      \              }\n            }\n         },\n         \"types\" : [ \"country\",
+      \"political\" ]\n      }\n   ],\n   \"status\" : \"OK\"\n}\n"
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: http://maps.google.com:80/maps/api/geocode/json?language=en&latlng=20.1%2C20.2&sensor=false
+    body: !!null 
+    headers: !!null 
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      content-type:
+      - application/json; charset=UTF-8
+      date:
+      - Mon, 01 Aug 2011 07:13:21 GMT
+      expires:
+      - Tue, 02 Aug 2011 07:13:21 GMT
+      cache-control:
+      - public, max-age=86400
+      server:
+      - mafe
+      x-xss-protection:
+      - 1; mode=block
+      transfer-encoding:
+      - chunked
+    body: ! "{\n   \"results\" : [\n      {\n         \"address_components\" : [\n
+      \           {\n               \"long_name\" : \"Borkou\",\n               \"short_name\"
+      : \"Borkou\",\n               \"types\" : [ \"administrative_area_level_2\",
+      \"political\" ]\n            },\n            {\n               \"long_name\"
+      : \"Borkou\",\n               \"short_name\" : \"Borkou\",\n               \"types\"
+      : [ \"administrative_area_level_1\", \"political\" ]\n            },\n            {\n
+      \              \"long_name\" : \"Chad\",\n               \"short_name\" : \"TD\",\n
+      \              \"types\" : [ \"country\", \"political\" ]\n            }\n         ],\n
+      \        \"formatted_address\" : \"Borkou, Chad\",\n         \"geometry\" :
+      {\n            \"bounds\" : {\n               \"northeast\" : {\n                  \"lat\"
+      : 22.06053190,\n                  \"lng\" : 20.95113070\n               },\n
+      \              \"southwest\" : {\n                  \"lat\" : 15.15697370,\n
+      \                 \"lng\" : 15.51574750\n               }\n            },\n
+      \           \"location\" : {\n               \"lat\" : 18.01379730,\n               \"lng\"
+      : 17.29028390\n            },\n            \"location_type\" : \"APPROXIMATE\",\n
+      \           \"viewport\" : {\n               \"northeast\" : {\n                  \"lat\"
+      : 23.35593130,\n                  \"lng\" : 25.48608490\n               },\n
+      \              \"southwest\" : {\n                  \"lat\" : 12.5047560,\n
+      \                 \"lng\" : 9.094482899999999\n               }\n            }\n
+      \        },\n         \"types\" : [ \"administrative_area_level_2\", \"political\"
+      ]\n      },\n      {\n         \"address_components\" : [\n            {\n               \"long_name\"
+      : \"Borkou\",\n               \"short_name\" : \"Borkou\",\n               \"types\"
+      : [ \"administrative_area_level_1\", \"political\" ]\n            },\n            {\n
+      \              \"long_name\" : \"Chad\",\n               \"short_name\" : \"TD\",\n
+      \              \"types\" : [ \"country\", \"political\" ]\n            }\n         ],\n
+      \        \"formatted_address\" : \"Borkou, Chad\",\n         \"geometry\" :
+      {\n            \"bounds\" : {\n               \"northeast\" : {\n                  \"lat\"
+      : 23.4503690,\n                  \"lng\" : 24.0026610\n               },\n               \"southwest\"
+      : {\n                  \"lat\" : 15.2738330,\n                  \"lng\" : 14.9958670\n
+      \              }\n            },\n            \"location\" : {\n               \"lat\"
+      : 20.14114890,\n               \"lng\" : 18.04801050\n            },\n            \"location_type\"
+      : \"APPROXIMATE\",\n            \"viewport\" : {\n               \"northeast\"
+      : {\n                  \"lat\" : 23.4503690,\n                  \"lng\" : 24.0026610\n
+      \              },\n               \"southwest\" : {\n                  \"lat\"
+      : 15.2738330,\n                  \"lng\" : 14.9958670\n               }\n            }\n
+      \        },\n         \"types\" : [ \"administrative_area_level_1\", \"political\"
+      ]\n      },\n      {\n         \"address_components\" : [\n            {\n               \"long_name\"
+      : \"Chad\",\n               \"short_name\" : \"TD\",\n               \"types\"
+      : [ \"country\", \"political\" ]\n            }\n         ],\n         \"formatted_address\"
+      : \"Chad\",\n         \"geometry\" : {\n            \"bounds\" : {\n               \"northeast\"
+      : {\n                  \"lat\" : 23.4492350,\n                  \"lng\" : 24.0000010\n
+      \              },\n               \"southwest\" : {\n                  \"lat\"
+      : 7.4429750,\n                  \"lng\" : 13.470\n               }\n            },\n
+      \           \"location\" : {\n               \"lat\" : 15.4541660,\n               \"lng\"
+      : 18.7322070\n            },\n            \"location_type\" : \"APPROXIMATE\",\n
+      \           \"viewport\" : {\n               \"northeast\" : {\n                  \"lat\"
+      : 23.4492350,\n                  \"lng\" : 24.0000010\n               },\n               \"southwest\"
+      : {\n                  \"lat\" : 7.4429750,\n                  \"lng\" : 13.470\n
+      \              }\n            }\n         },\n         \"types\" : [ \"country\",
+      \"political\" ]\n      }\n   ],\n   \"status\" : \"OK\"\n}\n"
+    http_version: '1.1'
