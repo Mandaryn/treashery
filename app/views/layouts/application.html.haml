@@ -5,6 +5,11 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
+    - Spot::TYPES.each do |type|
+      = link_to type, '#', class: 'set_type', :'data-type' => type
+      \|
+    = link_to "all", '#', class: 'set_type', :'data-type' => ""
+    #type{ :'data-type' => "" }
     #header
       %h1 Welcome to Treashery - list of trash that lay on our streets
       = link_to "Home", root_path

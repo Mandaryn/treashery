@@ -10,6 +10,7 @@ end
 
 Factory.define :spot do |f|
   f.name { Factory.next(:name) }
+  f.type { 'medical' }
   f.location { Point.new(lat: 20.1, lng: 20.2) }
 end
 

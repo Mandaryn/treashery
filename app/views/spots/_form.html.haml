@@ -9,5 +9,6 @@
   = f.simple_fields_for :location do |location_form|
     = location_form.input :lat
     = location_form.input :lng
+  = f.input :type, collection: Spot::TYPES
   = f.input :description, as: :text
   = f.button :submit

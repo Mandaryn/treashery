@@ -16,6 +16,8 @@ VCR.config do |c|
   c.ignore_localhost = true
 end
 
+Capybara.default_wait_time = 5
+
 RSpec.configure do |config|
   config.extend VCR::RSpec::Macros
   config.before do
