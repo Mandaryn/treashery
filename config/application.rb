@@ -41,6 +41,6 @@ module Treashery
     # Enable the asset pipeline
     config.assets.enabled = true
 
-    config.mongoid.logger = Logger.new('nul')
+    # config.mongoid.logger = Logger.new('nul')
   end
 end

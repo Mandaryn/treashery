@@ -47,7 +47,7 @@ class Spot
       if locality.persisted?
         locality.update_attributes(locality: locality.find_best_parent(possible_parents))
       else
-        locality = Locality.where(address_components: result.address_components).first
+        locality = Locality.any_in('address_components.short_name' => result.address_components.map{|ac| ac['short_name']}).first
       end
       possible_parents << locality
     end
