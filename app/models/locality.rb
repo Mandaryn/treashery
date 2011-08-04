@@ -10,7 +10,7 @@ class Locality
   belongs_to :locality
   has_many :localities
 
-  validates_uniqueness_of :formatted_address, scope: [:type, :address_component]
+  validates_uniqueness_of :formatted_address, scope: [:types]
 
   def find_best_parent(localities_array)
     localities_array.min do |a,b|
