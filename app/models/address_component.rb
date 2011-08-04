@@ -3,7 +3,8 @@ class AddressComponent
 
   field :long_name, type: String
   field :short_name, type: String
-  field :types, type: Array
+
+  field :types, type: Array, default: []
 
   embedded_in :locality, inverse_of: :address_components
 end

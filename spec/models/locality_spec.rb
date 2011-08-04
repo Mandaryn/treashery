@@ -1,3 +1,4 @@
+#encoding: utf-8
 require 'spec_helper'
 
 describe Locality do
@@ -77,6 +78,16 @@ describe Locality do
 
       wadi = markaz.localities.first
       wadi.formatted_address.should == "Wadi Al Netroun - Al Deblomasein Rd, Markaz El-hamam, Egypt"
+    end
+  end
+  
+  context "when spot is scoped" do
+    before do
+      @locality = Factory(:locality, :'address_components.long_name' => 'Polska')
+    end
+    
+    it "should return only localities that are in search scope" do
+      Locality.search('Polska').to_a.first.should eq(@locality)
     end
   end
 end

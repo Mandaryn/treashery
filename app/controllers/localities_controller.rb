@@ -7,4 +7,13 @@ class LocalitiesController < ApplicationController
       format.json { render json: @locality }
     end
   end
+
+  def search
+    @locality = Locality.search(params[:search]).first
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @locality }
+    end
+  end
 end

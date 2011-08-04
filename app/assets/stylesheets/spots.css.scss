@@ -30,6 +30,7 @@ a {
 
 #map_content {
   float: right;
+  clear: both;
   width: 80%;
   p { line-height: 1.4; }
 }
@@ -57,10 +58,29 @@ a {
   color: #FFF;
   p { margin: 0;
       padding: 10px 10px;
-      text-align: center;
+      
       font-family: "Arial";
       font-style: bold;
   }
+}
+
+#title {
+  float: left;
+  width: 334px;
+}
+
+#search {
+  float: left;
+  display: inline;
+  form {
+    text-align: right;}
+  line-height: 80px;
+  vertical-align: center;
+}
+
+#links {
+  line-height: 27px;
+  clear: both;
 }
 
 #type, .type {

@@ -11,14 +11,20 @@
     = link_to "all", '#', class: 'set_type', :'data-type' => ""
     #type{ :'data-type' => "" }
     #header
-      %h1 Welcome to Treashery - list of trash that lay on our streets
-      = link_to "Home", root_path
-      \|
-      = link_to "Faq", faq_path
-      \|
-      = link_to "About", about_path
-      \|
-      = link_to "Contact", contact_path
+      #title
+        %h1 Welcome to Treashery
+      #search
+        = form_tag url_for(:action => 'search', :controller => 'localities', format: :json), id: 'searchForm', method: :get, remote: true
+        = text_field_tag 'search', nil, placeholder: 'Enter search term...', id: 'searchInput'
+        = submit_tag 'Search'
+      #links
+        = link_to "Home", root_path
+        \|
+        = link_to "Faq", faq_path
+        \|
+        = link_to "About", about_path
+        \|
+        = link_to "Contact", contact_path
 
     = yield
 

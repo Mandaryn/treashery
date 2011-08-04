@@ -3,6 +3,7 @@ class Locality
 
   field :formatted_address, type: String
   field :types, type: Array, default: []
+
   embeds_many :address_components, class_name: 'AddressComponent'
   embeds_one :geometry
 
@@ -11,6 +12,8 @@ class Locality
   has_many :localities
 
   validates_uniqueness_of :formatted_address, scope: [:types]
+
+  scope :search,  ->(search) {where(:"address_components.long_name" => search)}
 
   def find_best_parent(localities_array)
     localities_array.min do |a,b|
