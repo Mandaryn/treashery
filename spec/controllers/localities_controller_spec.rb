@@ -12,7 +12,7 @@ describe LocalitiesController do
   
   describe "GET search" do
     it "assigns the requested locality as @locality" do
-      locality = Factory(:locality, formatted_address: 'Bydgoszcz')
+      locality = Factory(:locality, address_components: [{ long_name: "Bydgoszcz"  }])
       get :search, :search => 'Bydgoszcz'
       assigns(:locality).should eq(locality)
     end

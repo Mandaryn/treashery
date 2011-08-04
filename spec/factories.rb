@@ -8,7 +8,7 @@ end
 
 Factory.define :locality do |f|
   f.formatted_address { Factory.next(:name) }
-  #f.address_components { [{Factory.next(:long_name)}] }
+  f.address_components { [Factory.next(:long_name)] }
   f.types ['country']
   f.geometry { Geometry.new }
 end

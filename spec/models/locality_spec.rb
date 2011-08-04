@@ -83,7 +83,7 @@ describe Locality do
   
   context "when spot is scoped" do
     before do
-      @locality = Factory(:locality, :'address_components.long_name' => 'Polska')
+      @locality = Factory(:locality, address_components: [{long_name: 'Polska'}])
     end
     
     it "should return only localities that are in search scope" do
