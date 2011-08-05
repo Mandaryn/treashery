@@ -31,7 +31,7 @@ class Spot
   scope :typed, ->(type) {
     if type.present?
       where(:type => type)
-    else
+    else  
       all
     end
   }

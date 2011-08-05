@@ -5,10 +5,11 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
-    - Spot::TYPES.each do |type|
-      = link_to type, '#', class: 'set_type', :'data-type' => type
-      \|
-    = link_to "all", '#', class: 'set_type', :'data-type' => ""
+    .links
+      - Spot::TYPES.each do |type|
+        %span{:class => type}= link_to type, '#', id: type, class: "spot_type #{type}", :'data-type' => type
+        \|
+      %span{:class => "all"}= link_to "all", '#', id: 'all', class: 'spot_type all selected', :'data-type' => ""
     #type{ :'data-type' => "" }
     #header
       #title
@@ -17,7 +18,7 @@
         = form_tag url_for(:action => 'search', :controller => 'localities', format: :json), id: 'searchForm', method: :get, remote: true
         = text_field_tag 'search', nil, placeholder: 'Enter search term...', id: 'searchInput'
         = submit_tag 'Search'
-      #links
+      .links
         = link_to "Home", root_path
         \|
         = link_to "Faq", faq_path

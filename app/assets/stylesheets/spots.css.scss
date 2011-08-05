@@ -1,15 +1,21 @@
 // Place all the styles related to the Spots controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+  background-color: #333;
+  color: #fff;
+}
 
 a {
-  color: #333;
-}
+  color: #666;
+  &:visited {
+    color: #666; }
+  &:hover {
+    color: #000; } }
 
 #google_map {
   width: 100%;
-  height: 500px;
-  border-left: solid #333;
+  height: 75%;
 }
 
 #header {
@@ -20,8 +26,8 @@ a {
   h1 {
     font-family: "Arial";
     font-style: bold;
-    height: 80px;
-    line-height: 80px;
+    height: 50px;
+    line-height: 50px;
     margin: 0;
     padding-left: 10px;
     background: #333;
@@ -31,24 +37,26 @@ a {
 #map_content {
   float: right;
   clear: both;
-  width: 80%;
+  width: 77%;
   p { line-height: 1.4; }
 }
 
 #sidebar {
   background: #B9CAFF;
   float: left;
-  width: 20%;
-  height: 470px;
+  width: 22.9%;
+  height: 70%;
+  color: #000;
 }
 
 #add_new_spot {
   float: left;
   clear: left;
-  width: 20%;
-  height: 30px;
+  width: 22.9%;
+  height: 4.9%;
+  margin-top: 0.2%;
+  margin-bottom: 0.2%;
   background:#FF8539;
-  border-top: solid #333;
 }
 
 #footer {
@@ -73,18 +81,36 @@ a {
   float: left;
   display: inline;
   form {
-    text-align: right;}
-  line-height: 80px;
-  vertical-align: center;
-}
-
-#links {
-  line-height: 27px;
-  clear: both;
+    text-align: right;
+    line-height: 50px;
+    vertical-align: center;
+  }
+  #searchInput {
+    width: 300px;
+    font-size: 138%;
+    vertical-align: center;
+  }
+  #searchSubmit {
+    font-size: 138%;
+    vertical-align: center;
+  }
 }
 
 #type, .type {
   display: none;
+}
+
+.links {
+  line-height: 27px;
+  clear: both;
+  background: #333;
+  color: #FFF;
+  a {
+    color: #666;
+    &:visited {
+      color: #666; }
+    &:hover {
+      color: #fff; } }
 }
 
 .spot {
@@ -93,4 +119,42 @@ a {
 
 .geo.hidden {
   display: none;
+}
+
+.spot_type {
+  border: 0px;
+}
+
+.medical {
+  border-color: #ff1614;
+}
+
+.electronic {
+  border-color: #369700;
+}
+
+.animal_prod {
+  border-color: #663300;
+}
+
+.radioactive {
+  border-color: #0e62c1;
+}
+
+.food {
+  border-color: #d000bb;
+}
+
+.other {
+  border-color: #ffca00;
+}
+
+.all {
+  border-color: #fff;
+}
+
+.selected {
+  border-top-style: solid;
+  border-top-width: 2px;
+  font-weight: bold;
 }
